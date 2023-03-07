@@ -1,22 +1,26 @@
-package Dao;
+package dao;
 
-import Entity.Customer;
+import entity.Customer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDao {
-      List<Customer> customerList= new ArrayList<>();
+    public static List<Customer> customerList = new ArrayList<>();
+       static Integer idNumber=1;
 
-     public Customer saveTheCustomer(Customer customer){
+    public static Customer saveCustomer(Customer customer) {
+        customer.setId(idNumber);
         customerList.add(customer);
-         return customer;
 
-     }
+        idNumber++;
+        return customer;
 
+    }
+    public static Customer updateCustomer(Customer customer){
+        return customer;
 
-
-
+    }
 
 
 

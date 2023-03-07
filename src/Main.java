@@ -1,20 +1,16 @@
-import Controller.MainMenu;
-
-import java.sql.SQLOutput;
-
-
+import controller.MainMenuController;
+import dao.BegginingOperations;
 
 public class Main {
     public static void main(String[] args) {
 
+        BegginingOperations.InstertSampleCustomers();
+
         System.out.println(" Hoşgeldiniz...");
 
 
-     MainMenu mainMenu=new MainMenu();
-     mainMenu.selectTheOperation();
-
-
-
-
+     MainMenuController mainMenuController =new MainMenuController();
+     while(true){
+     mainMenuController.printOperationsMenu();}
     }
 }

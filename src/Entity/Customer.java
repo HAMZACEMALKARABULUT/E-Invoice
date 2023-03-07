@@ -1,17 +1,49 @@
-package Entity;
-
-import java.util.List;
+package entity;
 
 public class Customer {
 
+    private int id;
     private String name;
     private String surname;
-    private String idNo;
-    private String taxNo;
+
+    private String identifier;
+    private String telNo;
+    private String mail;
+
+    private String taxAdministration;
     private String title;
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public int getId() {
+        return id;
+    }
 
+    public String getTelNo() {
+        return telNo;
+    }
+
+    public void setTelNo(String telNo) {
+        this.telNo = telNo;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getTaxAdministration() {
+        return taxAdministration;
+    }
+
+    public void setTaxAdministration(String taxAdministration) {
+        this.taxAdministration = taxAdministration;
+    }
 
     public String getName() {
         return name;
@@ -29,20 +61,12 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String getIdNo() {
-        return idNo;
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 
-    public void setIdNo(String idNo) {
-        this.idNo = idNo;
-    }
-
-    public String getTaxNo() {
-        return taxNo;
-    }
-
-    public void setTaxNo(String taxNo) {
-        this.taxNo = taxNo;
+    public String getIdentifier() {
+        return identifier;
     }
 
     public String getTitle() {
@@ -54,4 +78,18 @@ public class Customer {
     }
 
 
+    @Override
+    public String toString() {
+
+
+        return " Kullanıcı bilgileri : \n" +"Id : "+this.getId()+
+                "\nTc veya Vergi No : " + this.getIdentifier() + "\nİsim : "
+                + this.getName() + "\nSoyisim : " + this.getSurname() + "\nUnvan : " + this.getTitle() + "\nTelefon Numarası : " +
+                this.getTelNo() + "\nMail Adresi : " + this.getMail() + "\nVergi Dairesi : " + this.getTaxAdministration()+"\n";
+
+
+    }
+
+
 }
+
