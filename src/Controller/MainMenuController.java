@@ -1,6 +1,7 @@
 package controller;
 
 import dao.CustomerDao;
+import service.CustomerService;
 
 public class MainMenuController {
 
@@ -66,7 +67,7 @@ public class MainMenuController {
                 CustomerController.deleteCustomer();
 
             case "4":
-                CustomerController.listCustomer();
+                CustomerController.listCustomers();
                 break;
             case "5":
                 printOperationsMenu();
@@ -85,19 +86,28 @@ public class MainMenuController {
         System.out.println("1- Ürün Ekle");
         System.out.println("2- Ürün Güncelle");
         System.out.println("3- Ürün Sil");
-        System.out.println("4- Ana Menüye Dön");
+        System.out.println("4- Ürünleri Listele");
+
+        System.out.println("5- Ana Menüye Dön");
 
         switch (selectOperation()){
             case "1":
-
+            ProductController.createProduct();
                 break;
             case "2":
-
+             ProductController.updateProduct();
                 break;
 
             case "3":
 
+            ProductController.deleteProduct();
+
+                break;
             case "4":
+                ProductController.listProducts();
+
+
+            case "5":
                 printOperationsMenu();
                 break;
             default:
@@ -107,6 +117,9 @@ public class MainMenuController {
         }
 
     }
+
+
+
     public void printInvoiceMenu() {
         System.out.println("  - -Fatura Menüsü- - ");
         System.out.println("1- Fatura Ekle");
@@ -134,6 +147,8 @@ public class MainMenuController {
         }
 
     }
+
+
 
 
     public static String selectOperation() {

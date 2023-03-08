@@ -8,8 +8,6 @@ import validation.ValidationUtil;
 import java.util.Scanner;
 
 
-
-
 public class CustomerController {
 
 
@@ -58,21 +56,25 @@ public class CustomerController {
         do {
             title = input.InputUtil.getInput("Unvan: ");
         }
+
         while (!ValidationUtil.isText(title));
 
         do {
             telNo = input.InputUtil.getInput("Tel no: ");
         }
+
         while (!ValidationUtil.isTelNo(telNo));
 
         do {
             mail = input.InputUtil.getInput("Zorunlu değil - Mail: ");
         }
+
         while (!(mail.trim().equals("") || ValidationUtil.isMail(mail)));
 
         do {
             taxAdministration = input.InputUtil.getInput("Vergi Dairesi: ");
         }
+
         while (!ValidationUtil.isText(taxAdministration));
         customer.setName(name);
         customer.setSurname(surname);
@@ -82,12 +84,13 @@ public class CustomerController {
         customer.setTaxAdministration(taxAdministration);
     }
 
+
     public static void getPersonalDatas(Customer customer) {
 
         String name, surname, title, telNo, mail, taxAdministration;
 
         do {
-            name =input.InputUtil. getInput("Ad: ");
+            name = input.InputUtil.getInput("Ad: ");
         }
         while (!ValidationUtil.isText(name));
 
@@ -125,12 +128,10 @@ public class CustomerController {
     }
 
 
-
-
     //---------------- Update customer methods ------------------------//
 
     public static void updateCustomer() {
-       listCustomer();
+        listCustomers();
 
         String idNo;
 
@@ -141,17 +142,17 @@ public class CustomerController {
         while (!ValidationUtil.isNumber(idNo));
 
 
-        Customer customer = findCustomer(idNo);
+        Customer customer = CustomerDao.findCustomer(idNo);
 
 
         String telNo, mail;
 
         do {
-            telNo = input.InputUtil.getInput("Yeni telefon numarası :");
+            telNo = input.InputUtil.getInput("Yeni telefon numarası: ");
         } while (!ValidationUtil.isTelNo(telNo));
 
         do {
-            mail = input.InputUtil.getInput("Yeni mail adresi veya adresleri :");
+            mail = input.InputUtil.getInput("Yeni mail adresi veya adresleri: ");
         } while (!ValidationUtil.isMail(mail));
 
 
@@ -162,61 +163,37 @@ public class CustomerController {
     }
 
 
-    public static Customer findCustomer(String idNo) {
-        boolean isThereCustomer = false;
-
-        int intId = Integer.parseInt(idNo);
-        for (Customer customer : CustomerService.getCustomerList()) {
-
-            if (customer.getId() == intId) {
-                isThereCustomer = true;
-                return customer;
-
-            }
-        }
-
-        if (!isThereCustomer) {
-
-            String inputId;
-            do {
-                inputId = input.InputUtil.getInput("Müşteri bulunamadı . Id numarasını tekrar giriniz");
-                findCustomer(inputId);
-            }
-            while (!ValidationUtil.isNumber(inputId));
-        }
-        Customer customer = new Customer();
-        return customer;
-    }
-
     //  ------------------------------Delete Customer Methods-------------------------------------- //
     public static void deleteCustomer() {
-        listCustomer();
+        listCustomers();
         String customerToBeDeleted;
+
+
         do {
             customerToBeDeleted = input.InputUtil.getInput("Silinecek Müşterinin ID numarasını giriniz: ");
         }
         while (!ValidationUtil.isNumber(customerToBeDeleted));
 
-        Customer customer = findCustomer(customerToBeDeleted);
-        String confirm = (input.InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n EVET veya HAYIR yazınız.")).toUpperCase();
-        if (confirm.equals("EVET")) {
-            CustomerService.getCustomerList().remove(customer);
-            listCustomer();
+        Customer customer = CustomerDao.findCustomer(customerToBeDeleted);
+        String confirm = (input.InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n  E/H")).toUpperCase();
+        if (confirm.equals("E")){
+
+            CustomerService.deleteCustomer(customer);
+            listCustomers();
             System.out.println("SİLME İŞLEMİ BAŞARILI ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
-        } else if (confirm.equals("HAYIR")) {
-            System.out.println("\n İşlem iptal edildi ...");}
+        }
+
+        else if (confirm.equals("H")) {
+            System.out.println("\n İşlem iptal edildi ...");
+        }
 
 
+    }
+
+    public static void listCustomers() {
+        CustomerService.listCustomer();
     }
     //----------------------Global Customer Methods------------------------------//
-
-    public static void listCustomer() {
-        for (Customer customer : CustomerService.getCustomerList()) {
-            System.out.println(customer);
-        }
-    }
-
-
 
 
 }

@@ -17,6 +17,8 @@ public class ValidationUtil {
     static public String taxNoRegex = "^[0-9]{10}$";
     static public String numberRegex="^[0-9]+$";
 
+    static public String priceRegex="^[0-9.]+$";
+
 
     public static boolean isValidText(String inputText, String regex) {
         Pattern pattern = Pattern.compile(regex);
@@ -40,6 +42,18 @@ public class ValidationUtil {
           return isTrue;
 
     }
+    public static String[] textSplit(String text) {
+
+        String[] textParts = text.split(",");
+
+        return textParts;
+    }
+
+    public static boolean isPrice(String price){
+
+        return isValidText(price,priceRegex);
+    }
+
 
     public static boolean isNumber(String number){
 
@@ -69,12 +83,7 @@ public class ValidationUtil {
         return isValidText(taxNo, taxNoRegex);
     }
 
-    public static String[] textSplit(String text) {
 
-           String[] textParts = text.split(",");
-
-        return textParts;
-    }
 
 
 
