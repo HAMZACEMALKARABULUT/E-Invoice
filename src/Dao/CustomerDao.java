@@ -1,8 +1,7 @@
 package dao;
 
 import entity.Customer;
-import service.CustomerService;
-import validation.ValidationUtil;
+import enums.Colors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,56 +18,35 @@ public class CustomerDao {
     }
 
 
-
     public static Customer updateCustomer(Customer customer) {
         return customer;
 
     }
 
 
-
-
-
-
-
-
-
     public static void deleteCustomer(Customer customer) {
 
 
         customerList.remove(customer);
-        System.out.println(customer.getId() + " Id numaralı kayıt başarıyla silindi");
+        System.out.println(Colors.GREEN.getCode() + customer.getId() + " Id Numaralı Müşteri Başarıyla silindi" + Colors.GREEN.getLastCode() + "\n");
 
     }
 
 
+   public static Customer findCustomerById(Long id){
+
+       for (Customer customer:customerList
+            ) {
+
+           if(customer.getId()==id){
+               return customer;
+
+           }
+       }
+        return null;
+   }
 
 
-
-
-    public static Customer findCustomer(String idNo) {
-        boolean isThereCustomer = false;
-
-        int intId = Integer.parseInt(idNo);
-        for (Customer customer : customerList) {
-
-            if (customer.getId() == intId) {
-                isThereCustomer = true;
-                return customer;
-
-            }
-        }
-
-        String inputId = "";
-        if (!isThereCustomer && ValidationUtil.isNumber(inputId = input.InputUtil.getInput("Müşteri bulunamadı . Id numarasını tekrar giriniz"))) {
-
-            findCustomer(inputId);
-        } else {
-            findCustomer(idNo);
-        }
-        Customer customer = new Customer();
-        return customer;
-    }
 
 
 
@@ -77,8 +55,6 @@ public class CustomerDao {
             System.out.println(customer);
         }
     }
-
-
 
 
 }

@@ -1,7 +1,6 @@
 package controller;
 
-import dao.CustomerDao;
-import service.CustomerService;
+import enums.Colors;
 
 public class MainMenuController {
 
@@ -10,7 +9,7 @@ public class MainMenuController {
 
 
     public  void printOperationsMenu() {
-        System.out.println("  - -ANA MENÜ- - ");
+        System.out.println(Colors.GREEN.getCode() +"  - -ANA MENÜ- - "+Colors.GREEN.getLastCode());
         System.out.println("1- Musteri menüsü");
         System.out.println("2- Ürün menüsü");
         System.out.println("3- Fatura menüsü");
@@ -47,7 +46,7 @@ public class MainMenuController {
 
     public void printCustomerMenu() {
 
-        System.out.println("  - -Müşteri Menüsü- - ");
+        System.out.println("  - -Müşteri İşlemleri- - ");
         System.out.println("1- Musteri Ekle");
         System.out.println("2- Müşteri Güncelle");
         System.out.println("3- Müşteri Sil");
@@ -65,7 +64,7 @@ public class MainMenuController {
 
             case "3":
                 CustomerController.deleteCustomer();
-
+                break;
             case "4":
                 CustomerController.listCustomers();
                 break;
@@ -74,6 +73,7 @@ public class MainMenuController {
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printOperationsMenu();
+                break;
 
         }
 
@@ -82,7 +82,7 @@ public class MainMenuController {
 
     public void printProductsMenu() {
 
-        System.out.println("- -Ürün Menüsü- -");
+        System.out.println("- -Ürün İşlemleri- -");
         System.out.println("1- Ürün Ekle");
         System.out.println("2- Ürün Güncelle");
         System.out.println("3- Ürün Sil");
@@ -105,7 +105,7 @@ public class MainMenuController {
                 break;
             case "4":
                 ProductController.listProducts();
-
+               break;
 
             case "5":
                 printOperationsMenu();
@@ -113,7 +113,7 @@ public class MainMenuController {
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printProductsMenu();
-
+break;
         }
 
     }
@@ -121,14 +121,15 @@ public class MainMenuController {
 
 
     public void printInvoiceMenu() {
-        System.out.println("  - -Fatura Menüsü- - ");
-        System.out.println("1- Fatura Ekle");
-        System.out.println("2- Fatura Güncelle");
-        System.out.println("3- Fatura Sil");
+        System.out.println("  - -Fatura İşlemleri- - ");
+        System.out.println("1- Taslak Fatura Oluştur");
+        System.out.println("2- Taslak Fatura Güncelle");
+        System.out.println("3- Taslak Fatura Sil");
         System.out.println("4- Ana Menüye Dön");
 
         switch (selectOperation()){
             case "1":
+                InvoiceController.subInvoiceMenu();
 
                 break;
             case "2":
@@ -136,13 +137,14 @@ public class MainMenuController {
                 break;
 
             case "3":
-
+              break;
             case "4":
                 printOperationsMenu();
                 break;
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printInvoiceMenu();
+                break;
 
         }
 

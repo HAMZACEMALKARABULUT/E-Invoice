@@ -3,8 +3,6 @@ package service;
 import dao.CustomerDao;
 import entity.Customer;
 
-import java.util.List;
-
 public class CustomerService {
 
     public static Customer createCustomer(Customer customer) {
@@ -13,7 +11,6 @@ public class CustomerService {
         return CustomerDao.saveCustomer(customer);
     }
     public static Customer updateCustomer(Customer customer){
-
         return CustomerDao.updateCustomer(customer);
     }
 
@@ -24,6 +21,10 @@ public class CustomerService {
     }
     public static void listCustomer(){
         CustomerDao.listCustomer();
+    }
+
+    public static Customer findCustomerById(Long id){
+       return CustomerDao.findCustomerById(id);
     }
 
 

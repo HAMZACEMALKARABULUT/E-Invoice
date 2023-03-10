@@ -1,5 +1,7 @@
 package entity;
 
+import enums.Colors;
+
 public class Customer {
 
     private int id;
@@ -82,10 +84,11 @@ public class Customer {
     public String toString() {
 
 
-        return " Kullanıcı bilgileri : \n" +"Id : "+this.getId()+
+        return Colors.PURPLE.getCode() + " Müşteri bilgileri : \n"+ Colors.PURPLE.getLastCode() +"Id : "+this.getId()+
                 "\nTc veya Vergi No : " + this.getIdentifier() + "\nİsim : "
                 + this.getName() + "\nSoyisim : " + this.getSurname() + "\nUnvan : " + this.getTitle() + "\nTelefon Numarası : " +
                 this.getTelNo() + "\nMail Adresi : " + this.getMail() + "\nVergi Dairesi : " + this.getTaxAdministration()+"\n";
+
 
 
     }

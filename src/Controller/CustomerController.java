@@ -1,11 +1,9 @@
 package controller;
 
-import dao.CustomerDao;
 import entity.Customer;
+import input.InputUtil;
 import service.CustomerService;
 import validation.ValidationUtil;
-
-import java.util.Scanner;
 
 
 public class CustomerController {
@@ -135,14 +133,9 @@ public class CustomerController {
 
         String idNo;
 
-        do {
-
-            idNo = input.InputUtil.getInput("Güncellemek istediğiniz müşterinin ID numarasını giriniz ...");
-        }
-        while (!ValidationUtil.isNumber(idNo));
 
 
-        Customer customer = CustomerDao.findCustomer(idNo);
+        Customer customer = findCustomerById("Güncellenecek Müşterinin ");
 
 
         String telNo, mail;
@@ -153,7 +146,7 @@ public class CustomerController {
 
         do {
             mail = input.InputUtil.getInput("Yeni mail adresi veya adresleri: ");
-        } while (!ValidationUtil.isMail(mail));
+        } while (!(ValidationUtil.isMail(mail) || mail.trim().equals("")));
 
 
         customer.setTelNo(telNo);
@@ -166,25 +159,16 @@ public class CustomerController {
     //  ------------------------------Delete Customer Methods-------------------------------------- //
     public static void deleteCustomer() {
         listCustomers();
-        String customerToBeDeleted;
 
 
-        do {
-            customerToBeDeleted = input.InputUtil.getInput("Silinecek Müşterinin ID numarasını giriniz: ");
-        }
-        while (!ValidationUtil.isNumber(customerToBeDeleted));
-
-        Customer customer = CustomerDao.findCustomer(customerToBeDeleted);
+        Customer customer = findCustomerById("Silinecek müşterinin");
         String confirm = (input.InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n  E/H")).toUpperCase();
-        if (confirm.equals("E")){
+        if (confirm.equals("E")) {
 
             CustomerService.deleteCustomer(customer);
-            listCustomers();
-            System.out.println("SİLME İŞLEMİ BAŞARILI ŞEKİLDE GERÇEKLEŞTİRİLDİ.");
-        }
 
-        else if (confirm.equals("H")) {
-            System.out.println("\n İşlem iptal edildi ...");
+        } else if (confirm.equals("H")) {
+            System.out.println("\033[31m" + "\n İşlem iptal edildi ..." + "\033[0m");
         }
 
 
@@ -193,6 +177,27 @@ public class CustomerController {
     public static void listCustomers() {
         CustomerService.listCustomer();
     }
+
+    public static Customer findCustomerById(String firstText) {
+        String id;
+
+        do {
+            id = InputUtil.getInput(firstText + " id numarasını giriniz");
+        }
+        while (!ValidationUtil.isNumber(id));
+
+
+        Long idToFind = Long.parseLong(id);
+        Customer customer = CustomerService.findCustomerById(idToFind);
+
+        if (customer != null) {
+            return customer;
+        } else {
+            return findCustomerById(firstText);
+        }
+
+    }
+
     //----------------------Global Customer Methods------------------------------//
 
 
