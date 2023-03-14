@@ -25,9 +25,14 @@ public class ProductService {
         ProductDao.listProducts();
     }
 
-    public static Product findProduct(String idNo){
+    public static Product findProductById(Long idNo){
 
-       return ProductDao.findProduct(idNo);
+       return ProductDao.findProductById(idNo);
+    }
+
+
+    public static Boolean  productUniqueNameControl(String name){
+        return ProductDao.productUniqueNameControl(name);
     }
 
 }
