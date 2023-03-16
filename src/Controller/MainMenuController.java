@@ -1,6 +1,8 @@
 package controller;
 
+import entity.Invoice;
 import enums.Colors;
+import enums.InvoiceState;
 
 public class MainMenuController {
 
@@ -121,15 +123,28 @@ break;
 
 
     public void printInvoiceMenu() {
+
+        InvoiceController invoiceController=new InvoiceController();
+
+
         System.out.println("  - -Fatura İşlemleri- - ");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
         System.out.println("1- Taslak Fatura Oluştur");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
         System.out.println("2- Taslak Fatura Güncelle");
-        System.out.println("3- Taslak Fatura Sil");
-        System.out.println("4- Ana Menüye Dön");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
+        System.out.println("3- Taslak Faturaları Listele");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
+        System.out.println("4 - Gönderilmiş Faturaları Listele");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
+        System.out.println("5- Taslak Faturayı Gönder");
+        System.out.println(Colors.CYAN.getCode()+"-----------------------------"+Colors.CYAN.getLastCode());
+        System.out.println("6- Ana Menüye Dön");
 
         switch (selectOperation()){
             case "1":
-                InvoiceController.subInvoiceMenu();
+                Invoice invoice=new Invoice();
+                invoiceController.subInvoiceMenu(invoice);
 
                 break;
             case "2":
@@ -137,8 +152,18 @@ break;
                 break;
 
             case "3":
+                invoiceController.listInvoicesByState(InvoiceState.DRAFT);
+                printInvoiceMenu();
               break;
+
             case "4":
+                invoiceController.listInvoicesByState(InvoiceState.SENT);
+                printInvoiceMenu();
+                break;
+            case "5":
+                invoiceController.sendInvoice();
+                printInvoiceMenu();
+            case  "6":
                 printOperationsMenu();
                 break;
             default:

@@ -2,17 +2,31 @@ package service;
 
 import dao.InvoiceDao;
 import entity.Invoice;
+import enums.InvoiceState;
 
 public class InvoiceService {
-  static InvoiceDao invoiceDao=new InvoiceDao();
-    public  Invoice saveInvoice(Invoice invoice){
+   InvoiceDao invoiceDao=new InvoiceDao();
+    public  void saveInvoice(Invoice invoice){
 
-        return invoiceDao.saveInvoice(invoice);
+         invoiceDao.saveInvoice(invoice);
 
 
 
     }
+    public boolean listInvoicesByState(InvoiceState invoiceState) {
+
+        return invoiceDao.listInvoicesByState(invoiceState);
+    }
 
 
+    public void sendInvoice(Invoice invoice){
+        invoiceDao.sendInvoice(invoice);
+    }
+
+    public Invoice findInvoiceById(String id){
+
+       return  invoiceDao.findInvoiceById( Long.parseLong(id));
+
+    }
 
 }

@@ -19,6 +19,8 @@ public class ValidationUtil {
 
     static public String priceRegex="^[0-9.]+$";
 
+    static public String  moneyTypeRegex="^(?:TL|tl|₺|\\$|USD|usd|€|EUR|eur)$";
+
 
     public static boolean isValidText(String inputText, String regex) {
         Pattern pattern = Pattern.compile(regex);
@@ -26,6 +28,10 @@ public class ValidationUtil {
         return matcher.matches();
     }
 
+    public static boolean isMoneyType(String moneyType){
+
+        return isValidText(moneyType,moneyTypeRegex);
+    }
 
     public static boolean isMail(String mail) {
 

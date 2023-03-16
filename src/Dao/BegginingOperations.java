@@ -100,7 +100,7 @@ public class BegginingOperations {
         product2.setBarcode("3423423");
         product2.setQuantity(1000);
         product2.setUnitPrice(3.99);
-        product2.setVatRate((short) 18);
+        product2.setVatRate((short) 1);
 
         product3.setName("domates");
         product3.setBrand("");
@@ -114,7 +114,7 @@ public class BegginingOperations {
         product4.setBarcode("1232343213");
         product4.setQuantity(1000);
         product4.setUnitPrice(20.99);
-        product4.setVatRate((short) 18);
+        product4.setVatRate((short) 8);
 
 
         product5.setName("mandalina");
@@ -122,14 +122,14 @@ public class BegginingOperations {
         product5.setBarcode("12345643213");
         product5.setQuantity(1000);
         product5.setUnitPrice(11.99);
-        product5.setVatRate((short) 18);
+        product5.setVatRate((short) 1);
 
         product6.setName("limon");
         product6.setBrand("");
         product6.setBarcode("12343324123");
         product6.setQuantity(1000);
         product6.setUnitPrice(9.99);
-        product6.setVatRate((short) 18);
+        product6.setVatRate((short) 8);
 
 
         ProductService.createProduct(product);
@@ -139,5 +139,8 @@ public class BegginingOperations {
         ProductService.createProduct(product4);
         ProductService.createProduct(product5);
         ProductService.createProduct(product6);
+
+
+
     }
 }

@@ -9,13 +9,10 @@ public class Main {
 
         System.out.println(Colors.BLUE.getCode()+" <<<<<<<<<<<<<<<<<<<<<<HOŞGELDİNİZ>>>>>>>>>>>>>>>>>>>>>>>>>>>  "+Colors.BLUE.getLastCode());
 
-
+        while (true) {
      MainMenuController mainMenuController =new MainMenuController();
 
-
-
-            while (true) {
-                mainMenuController.printOperationsMenu();
+     mainMenuController.printOperationsMenu();
             }
 
 
