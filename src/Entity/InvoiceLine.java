@@ -11,7 +11,7 @@ public class InvoiceLine {
 
 
 
-    public void addLine(int piece, Product product) {
+    public void setLine(int piece, Product product) {
 
 
 
@@ -19,7 +19,7 @@ public class InvoiceLine {
         this.product = product;
         this.lineCost = Math.round(piece * product.getUnitPrice()* 100.0) / 100.0;
 
-        this.lineTaxCost= Math.round((lineCost*product.getVatRate() * 100.0 )/100.0) / 100.0;  ;
+        this.lineTaxCost= Math.round((lineCost*product.getVatRate() * 100.0 )/100.0) / 100.0;
     }
     public int getPiece() {
         return piece;
@@ -34,13 +34,17 @@ public class InvoiceLine {
     }
     public double getLineTaxCost(){return lineTaxCost;}
 
-
+    public void setPiece(int piece) {
+        this.piece = piece;
+    }
 
     @Override
     public String toString() {
-        return
-                getProduct().getBrand() + " " + getProduct().getName() + "  |   " + getProduct().getUnitPrice() + " x "
-                + this.getPiece() + " = " + this.getLineCost() + "  |  kdv : %" + getProduct().getVatRate() + "\n";
+        StringBuilder sb=new StringBuilder();
+        sb.append(System.lineSeparator()).append(getProduct().getBrand()).append("  ").append(getProduct().getName()).append("    |    ").append(getProduct()
+                .getUnitPrice()).append(" x ").append(getPiece()).append(" = ").append(getLineCost()).append("  |  kdv : %").append(getProduct().getVatRate()).append("   ")
+                .append(getLineCost()).append("    ").append(getLineTaxCost()).append(System.lineSeparator());
+        return  sb.toString();
     }
 
 }

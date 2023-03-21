@@ -3,28 +3,34 @@ package service;
 import dao.CustomerDao;
 import entity.Customer;
 
+import java.util.List;
+import java.util.Optional;
+
 public class CustomerService {
 
-    public static Customer createCustomer(Customer customer) {
+    CustomerDao customerDao=new CustomerDao();
+
+    public  Customer createCustomer(Customer customer) {
 
 
-        return CustomerDao.saveCustomer(customer);
+        return customerDao.saveCustomer(customer);
     }
-    public static Customer updateCustomer(Customer customer){
-        return CustomerDao.updateCustomer(customer);
-    }
-
-
-    public static void deleteCustomer(Customer customer){
-
-        CustomerDao.deleteCustomer(customer);
-    }
-    public static void listCustomer(){
-        CustomerDao.listCustomer();
+    public  Customer updateCustomer(Customer customer){
+        return customerDao.updateCustomer(customer);
     }
 
-    public static Customer findCustomerById(Long id){
-       return CustomerDao.findCustomerById(id);
+
+    public boolean deleteCustomer(Customer customer){
+
+       return  customerDao.deleteCustomer(customer);
+    }
+    public List<Customer> listCustomer(){
+       return  customerDao.listCustomer();
+    }
+
+    public  Optional<Customer> findCustomerById(Long id){
+
+        return customerDao.findCustomerById(id);
     }
 
 

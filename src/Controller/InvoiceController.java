@@ -20,6 +20,7 @@ public class InvoiceController {
     MainMenuController mainMenuController = new MainMenuController();
     InvoiceService invoiceService = new InvoiceService();
 
+
     //-----------------------SUB MENU------------------------//
 
 
@@ -39,29 +40,32 @@ public class InvoiceController {
 
             case "1":
                 setCustomerId(invoice);
+                subInvoiceMenu(invoice);
+
                 break;
             case "2":
                 addInvoiceLines(invoice);
+                subInvoiceMenu(invoice);
+
                 break;
 
             case "3":
                 viewInvoice(invoice);
+                subInvoiceMenu(invoice);
                 break;
 
             case "4":
                 saveInvoice(invoice);
+                subInvoiceMenu(invoice);
+
                 break;
 
             case "5":
-               mainMenu.printInvoiceMenu();
+                mainMenu.printInvoiceMenu();
                 break;
-
-
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 subInvoiceMenu(invoice);
-
-
         }
     }
 
@@ -69,9 +73,10 @@ public class InvoiceController {
 
 
     public void setCustomerId(Invoice invoice) {
+        CustomerController customerController = new CustomerController();
+        customerController.listCustomers();
 
-
-        invoice.setCustomerId(CustomerController.findCustomerById("Fatura oluşturulacak müşterinin").getId());
+        invoice.setCustomerId(customerController.findCustomerById("Fatura oluşturulacak müşterinin").get().getId());
 
         System.out.println(Colors.BLUE.getCode() + "Müşteri Id Faturaya Eklendi.." + Colors.BLUE.getLastCode());
 
@@ -81,9 +86,8 @@ public class InvoiceController {
 
 
     public void addInvoiceLines(Invoice invoice) {
-
-        List<InvoiceLine> invoiceLineList = new ArrayList<>();
         ProductController.listProducts();
+        List<InvoiceLine> invoiceLineList = new ArrayList<>();
         InvoiceLine invoiceLine;
         System.out.println(Colors.BLUE.getCode() + "FATURA SATIRLARI BURADA OLUŞTURULMAKTADIR . ÜRÜN LİSTESİNDEN ÜRÜNLERİ SEÇİNİZ. " + Colors.BLUE.getLastCode());
         do {
@@ -97,13 +101,11 @@ public class InvoiceController {
                 piece = input.InputUtil.getInput("Adet giriniz .");
             } while (!ValidationUtil.isNumber(piece));
 
-            invoiceLine.addLine(Integer.parseInt(piece), product);
-            System.out.println(Colors.YELLOW.getCode() + "İşlemi bitirmek için ' tamam ' yazınız," +
-                    " devam etmek için herhangi bir tuşa basınız ." + Colors.YELLOW.getLastCode());
+            invoiceLine.setLine(Integer.parseInt(piece), product);
+            System.out.println(Colors.YELLOW.getCode() + "İşlemi bitirmek için ' tamam ' yazınız," + " devam etmek için herhangi bir tuşa basınız ." + Colors.YELLOW.getLastCode());
             invoiceLineList.add(invoiceLine);
 
-        }
-        while (!InputUtil.getInput("").trim().toLowerCase().equals("tamam"));
+        } while (!InputUtil.getInput("").trim().toLowerCase().equals("tamam"));
 
         invoice.setInvoiceLines(invoiceLineList);
         invoice.setTotalCost();
@@ -112,23 +114,6 @@ public class InvoiceController {
         subInvoiceMenu(invoice);
     }
 
-
-    public void saveInvoice(Invoice invoice) {
-
-       if(isInvoiceNullControl(invoice)) {
-            invoice.setUuid(generateUuid());
-
-            setDate(invoice);
-            invoice.setStatus(InvoiceState.DRAFT.toString());
-
-            invoiceService.saveInvoice(invoice);
-            System.out.println(invoice);
-
-
-            mainMenuController.printInvoiceMenu();}
-       else{subInvoiceMenu(invoice);}
-
-    }
     public Invoice setDate(Invoice invoice) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         String formattedDate = LocalDate.now().format(formatter);
@@ -143,91 +128,161 @@ public class InvoiceController {
         return invoice;
     }
 
-    public void viewInvoice(Invoice invoice) {
-        if (!isInvoiceNullControl(invoice)) {
-            System.out.println("Fatura giriniz");
-            subInvoiceMenu(invoice);
-        } else {
-            System.out.println(invoice);
-
-            subInvoiceMenu(invoice);
-        }
-    }
-
-
     public void setMoneyType(Invoice invoice) {
         String moneyType;
+        String exchangeRate;
         do {
             moneyType = InputUtil.getInput("Para birimini giriniz  | örnek : eur , tl ,usd , ₺ , € , $");
-        }
-        while (!ValidationUtil.isMoneyType(moneyType));
+        } while (!ValidationUtil.isMoneyType(moneyType));
+        do {
+            exchangeRate = InputUtil.getInput("Girdiğiniz para birimi için döviz kurunu giriniz , TL için  '1' yazınız . ");
+        } while (!ValidationUtil.isPrice(exchangeRate));
+
+        invoice.setTotalCost();
         invoice.setMoneyType(moneyType);
+        invoice.setTotalTlCost(Double.parseDouble(exchangeRate));
     }
 
     public String generateUuid() {
-
-
         UUID uuid = UUID.randomUUID();
         String uuidAsString = uuid.toString();
 
         return uuidAsString;
     }
 
+    public void saveInvoice(Invoice invoice) {
+
+        if (isInvoiceNullControl(invoice)) {
+
+            invoice.setUuid(generateUuid());
+
+            setDate(invoice);
+
+            invoice.setStatus(InvoiceState.DRAFT.toString());
+
+            invoiceService.saveInvoice(invoice);
+
+            System.out.println(invoice);
+
+            mainMenuController.printInvoiceMenu();
+
+        } else {
+            subInvoiceMenu(invoice);
+        }
+
+    }
+
+    public void sendInvoice() {
+        printInvoiceListByState(InvoiceState.DRAFT);
+        Invoice invoice;
+        do {
+            invoice = findInvoiceById("Gönderilecek Faturanın ");
+        }
+
+        while (!isInvoiceNullControl(invoice));
+
+        invoiceService.setInvoiceState(invoice, InvoiceState.SENT);
+
+
+        System.out.println(Colors.GREEN.getCode() + "Fatura Başarıyla Gönderildi" + Colors.GREEN.getLastCode());
+    }
+
+
+    public void viewInvoice(Invoice invoice) {
+        if (!isInvoiceNullControl(invoice)) {
+            System.out.println("Fatura bulunamadı.");
+            subInvoiceMenu(invoice);
+        } else {
+            System.out.println(invoice);
+
+        }
+    }
+
 
     public boolean isInvoiceNullControl(Invoice invoice) {
         if (invoice == null) {
-            System.out.println(Colors.RED.getCode() + "Fatura düzenleyiniz ..." + Colors.RED.getLastCode());
+            System.out.println(Colors.RED.getCode() + "Fatura bulunamadı..." + Colors.RED.getLastCode());
             return false;
-
         } else if (invoice.getInvoiceLines() == null) {
             System.out.println(Colors.RED.getCode() + "Ürün eklenmemiş fatura olamaz , Ürün ekleyiniz ..." + Colors.RED.getLastCode());
             subInvoiceMenu(invoice);
             return false;
-
         } else if (invoice.getCustomerId() == 0) {
             System.out.println(Colors.RED.getCode() + "Müşteri id eklenmeden fatura oluşturulamaz , Müşteri id ekleyiniz..." + Colors.RED.getLastCode());
             setCustomerId(invoice);
             return false;
-
         } else {
             return true;
         }
     }
 
-    public void listInvoicesByState(InvoiceState invoiceState) {
-        String isThereText;
-        Boolean isThere =invoiceService.listInvoicesByState(invoiceState);
-        isThereText=isThere?Colors.GREEN.getCode()+"Faturalar Listelendi ."+Colors.GREEN.getLastCode(): Colors.RED.getCode()+"İstediğiniz özellikte Fatura bulunmamaktadır"+Colors.RED.getLastCode();
-        System.out.println(isThereText);
+    public List<Invoice> getInvoiceListByState(InvoiceState invoiceState) {
 
+        List<Invoice> filterList = invoiceService.getInvoiceListByState(invoiceState);
+        if (filterList.isEmpty()) {
+            System.out.println(Colors.RED.getCode() + "Belirtilen özellikte Fatura bulunmamaktadır" + Colors.RED.getLastCode());
+            mainMenuController.printInvoiceMenu();
+        }
+        return filterList;
     }
-    public void sendInvoice(){
-        listInvoicesByState(InvoiceState.DRAFT);
 
-         invoiceService.sendInvoice(findInvoiceById("Gönderilecek Faturanın "));
-        System.out.println(Colors.GREEN.getCode()+"Fatura Başarıyla Gönderildi"+Colors.GREEN.getLastCode());
+    public List<Invoice> printInvoiceListByState(InvoiceState invoiceState) {
 
+
+        //getListInvoicesByState metodundan gelen listeyi ekrana basar.
+
+        List<Invoice> printList = getInvoiceListByState(invoiceState);
+        printList.forEach(System.out::println);
+        return printList;
     }
-    public Invoice findInvoiceById(String firstText){
+
+
+    public Invoice findInvoiceById(String firstText) {
         String id;
-
         do {
             id = InputUtil.getInput(firstText + " id numarasını giriniz");
-        }
-        while (!ValidationUtil.isNumber(id));
-
-
-
-        Invoice invoice =invoiceService.findInvoiceById(id);
-
-        if (invoice!= null) {
-            return invoice;
-        } else {
-            return findInvoiceById(firstText);
-        }
-
-
-
+        } while (!ValidationUtil.isNumber(id));
+        return invoiceService.findInvoiceById(id).get();
     }
+
+    public void updateDraftInvoice() {
+        //TASLAK FATURALARIN KONTROL EDİLİP LİSTELENMESİ- FATURA YOK İSE FATURA MENÜSÜNE ATAR
+        printInvoiceListByState(InvoiceState.DRAFT);
+
+        //GÜNCELLENECEK FATURA İD'SİNİN  ALINIP , DÜZENLENME MODUNDA SATIRLARININ LİSTELENMESİ  - GEÇERSİZ FATURA İD'Sİ GİRİLİRSE DÖNGÜ DEVAM EDER.
+        Invoice invoice;
+        do {
+            invoice = findInvoiceById("Güncellenecek Faturanın ");
+        } while (invoice == null);
+
+        //viewInvoice(invoice);
+
+
+        for (InvoiceLine invoiceLine : invoice.getInvoiceLines()) {
+            String newPiece;
+            do {
+                System.out.println(invoiceLine);
+                newPiece = InputUtil.getInput("Satırın yeni adet değerini giriniz , boş geçmek için enter a basınız.");
+            }
+            while (!(newPiece.trim().equals("") || ValidationUtil.isNumber(newPiece)));
+
+            if (ValidationUtil.isNumber(newPiece)) {
+                invoiceLine.setLine(Integer.parseInt(newPiece), invoiceLine.getProduct());
+            }
+
+        }
+        setMoneyType(invoice);
+
+        invoice.setTotalCost();
+
+        invoice.setTotalTax();
+
+        System.out.println(invoiceService.updateDraftInvoice(invoice));
+
+        System.out.println(Colors.GREEN.getCode() + "Güncelleme gerçekleşti  ..." + Colors.GREEN.getLastCode());
+
+        mainMenuController.printInvoiceMenu();
+    }
+
 
 }

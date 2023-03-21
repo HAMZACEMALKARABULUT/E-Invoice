@@ -37,6 +37,7 @@ public class MainMenuController {
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printOperationsMenu();
+                break;
 
         }
 
@@ -47,7 +48,7 @@ public class MainMenuController {
 
 
     public void printCustomerMenu() {
-
+         CustomerController customerController=new CustomerController();
         System.out.println("  - -Müşteri İşlemleri- - ");
         System.out.println("1- Musteri Ekle");
         System.out.println("2- Müşteri Güncelle");
@@ -58,20 +59,21 @@ public class MainMenuController {
 
         switch (selectOperation()){
             case "1":
-                CustomerController.createCustomer();
+                customerController.createCustomer();
                 break;
             case "2":
-                CustomerController.updateCustomer();
+                customerController.updateCustomer();
                 break;
 
             case "3":
-                CustomerController.deleteCustomer();
+                customerController.deleteCustomer();
                 break;
             case "4":
-                CustomerController.listCustomers();
+                customerController.listCustomers();
                 break;
             case "5":
                 printOperationsMenu();
+                break;
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printOperationsMenu();
@@ -83,30 +85,27 @@ public class MainMenuController {
 
 
     public void printProductsMenu() {
-
+ProductController productController=new ProductController();
         System.out.println("- -Ürün İşlemleri- -");
         System.out.println("1- Ürün Ekle");
         System.out.println("2- Ürün Güncelle");
         System.out.println("3- Ürün Sil");
         System.out.println("4- Ürünleri Listele");
-
         System.out.println("5- Ana Menüye Dön");
 
         switch (selectOperation()){
             case "1":
-            ProductController.createProduct();
+            productController.createProduct();
                 break;
             case "2":
-             ProductController.updateProduct();
+            productController.updateProduct();
                 break;
 
             case "3":
-
-            ProductController.deleteProduct();
-
+            productController.deleteProduct();
                 break;
             case "4":
-                ProductController.listProducts();
+            productController.listProducts();
                break;
 
             case "5":
@@ -115,7 +114,7 @@ public class MainMenuController {
             default:
                 System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
                 printProductsMenu();
-break;
+                break;
         }
 
     }
@@ -148,16 +147,16 @@ break;
 
                 break;
             case "2":
-
+               invoiceController.updateDraftInvoice();
                 break;
 
             case "3":
-                invoiceController.listInvoicesByState(InvoiceState.DRAFT);
+                invoiceController.printInvoiceListByState(InvoiceState.DRAFT);
                 printInvoiceMenu();
               break;
 
             case "4":
-                invoiceController.listInvoicesByState(InvoiceState.SENT);
+                invoiceController.printInvoiceListByState(InvoiceState.SENT);
                 printInvoiceMenu();
                 break;
             case "5":
@@ -181,6 +180,7 @@ break;
     public static String selectOperation() {
 
         return input.InputUtil.getInput("Yapılacak işlemi seçiniz");
+
 
     }
 

@@ -11,6 +11,8 @@ public class Invoice {
     private long customerId;
     private List<InvoiceLine> invoiceLines;
     private double totalCost;
+
+    private double totalTlCost;
     private double totalTax;
     private LocalDate createDate;
     private String createTime;
@@ -41,6 +43,14 @@ public class Invoice {
 
         }
         this.totalTax = Math.round(totalTaxCost * 100.0) / 100.0;
+    }
+
+    public double getTotalTlCost() {
+        return totalTlCost;
+    }
+
+    public void setTotalTlCost(double exchangeRate) {
+        this.totalTlCost = Math.round(exchangeRate * getTotalCost() * 100.0) / 100.0 ;
     }
 
     public String getUuid() {
@@ -98,7 +108,6 @@ public class Invoice {
             cost += invoiceLine.getLineCost();
         }
         this.totalCost = Math.round(cost * 100.0) / 100.0;
-
     }
 
     public void setId(long id) {
@@ -117,10 +126,13 @@ public class Invoice {
 
     @Override
     public String toString() {
+        CustomerService customerService=new CustomerService();
+
         StringBuilder sb = new StringBuilder();
 
         int line = 1;
-        Customer customer = CustomerService.findCustomerById(getCustomerId());
+
+        Customer customer = customerService.findCustomerById(getCustomerId()).get();
 
         sb.append(System.lineSeparator()).append(Colors.BLUE.getCode()).append("Sayın , ").append(customer.getName()).append(" ").append(customer.getSurname()).
 
@@ -154,8 +166,8 @@ public class Invoice {
 
         sb.append(System.lineSeparator()).append(System.lineSeparator()).
                 append(Colors.YELLOW.getCode()).append("                                               TOPLAM TUTAR :  ").append(" ").
-                append(getTotalCost()).append(getMoneyType()).append("       ").
-                append("TOPLAM KDV :    ").append(getTotalTax()).append(getMoneyType()).append(Colors.YELLOW.getLastCode());
+                append(getTotalCost()).append("  ").append(getMoneyType()).append("       ").
+                append("TOPLAM KDV :    ").append(getTotalTax()).append(" ").append(getMoneyType()).append("     TL Tutarı :       ").append(getTotalTlCost()).append("  TL").append(Colors.YELLOW.getLastCode());
         sb.append(Colors.BLACK.getLastCode());
 
 

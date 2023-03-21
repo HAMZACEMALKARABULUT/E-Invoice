@@ -4,6 +4,9 @@ import dao.InvoiceDao;
 import entity.Invoice;
 import enums.InvoiceState;
 
+import java.util.List;
+import java.util.Optional;
+
 public class InvoiceService {
    InvoiceDao invoiceDao=new InvoiceDao();
     public  void saveInvoice(Invoice invoice){
@@ -13,20 +16,26 @@ public class InvoiceService {
 
 
     }
-    public boolean listInvoicesByState(InvoiceState invoiceState) {
+    public List<Invoice> getInvoiceListByState() {
 
-        return invoiceDao.listInvoicesByState(invoiceState);
+        return invoiceDao.getInvoiceListByState();
+    }
+    public List<Invoice> getInvoiceListByState(InvoiceState state) {
+
+        return invoiceDao.getInvoiceListByState(state);
     }
 
-
-    public void sendInvoice(Invoice invoice){
-        invoiceDao.sendInvoice(invoice);
+    public void setInvoiceState(Invoice invoice, InvoiceState state){
+        invoiceDao.setInvoiceState(invoice,state);
     }
 
-    public Invoice findInvoiceById(String id){
+    public Optional<Invoice> findInvoiceById(String id){
 
        return  invoiceDao.findInvoiceById( Long.parseLong(id));
 
     }
 
+    public Invoice updateDraftInvoice(Invoice invoice ) {
+        return   invoiceDao.updateDraftInvoice(invoice);
+    }
 }
