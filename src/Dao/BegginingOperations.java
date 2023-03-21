@@ -5,7 +5,9 @@ import entity.Product;
 import service.ProductService;
 
 public class BegginingOperations {
-    public static void InstertSampleCustomers(){
+    CustomerDao customerDao=new CustomerDao();
+    ProductService productService=new ProductService();
+    public  void InsertSampleCustomers(){
         Customer customer=new Customer();
         Customer customer1=new Customer();
         Customer customer2=new Customer();
@@ -64,12 +66,12 @@ public class BegginingOperations {
         customer5.setTitle("054234234");
 
 
-         CustomerDao.saveCustomer(customer);
-         CustomerDao.saveCustomer(customer1);
-         CustomerDao.saveCustomer(customer2);
-         CustomerDao.saveCustomer(customer3);
-         CustomerDao.saveCustomer(customer4);
-         CustomerDao.saveCustomer(customer5);
+         customerDao.saveCustomer(customer);
+         customerDao.saveCustomer(customer1);
+         customerDao.saveCustomer(customer2);
+         customerDao.saveCustomer(customer3);
+         customerDao.saveCustomer(customer4);
+         customerDao.saveCustomer(customer5);
 
          Product product=new Product();
          Product product1=new Product();
@@ -132,13 +134,13 @@ public class BegginingOperations {
         product6.setVatRate((short) 8);
 
 
-        ProductService.createProduct(product);
-        ProductService.createProduct(product1);
-        ProductService.createProduct(product2);
-        ProductService.createProduct(product3);
-        ProductService.createProduct(product4);
-        ProductService.createProduct(product5);
-        ProductService.createProduct(product6);
+        productService.createProduct(product);
+        productService.createProduct(product1);
+        productService.createProduct(product2);
+        productService.createProduct(product3);
+        productService.createProduct(product4);
+        productService.createProduct(product5);
+        productService.createProduct(product6);
 
 
 

@@ -5,11 +5,15 @@ import input.InputUtil;
 import service.CustomerService;
 import validation.ValidationUtil;
 
+import java.util.List;
+import java.util.Optional;
+
 
 public class CustomerController {
+MainMenuController mainMenuController=new MainMenuController();
+    CustomerService customerService = new CustomerService();
 
-
-    public static void createCustomer() {
+    public void createCustomer() {
         Customer customer = new Customer();
         String idOrTax;
         do {
@@ -32,13 +36,13 @@ public class CustomerController {
             System.out.println("Yanlış format...");
             createCustomer();
         }
-        CustomerService.createCustomer(customer);
+        customerService.createCustomer(customer);
         System.out.println(customer + "\n\n");
         MainMenuController mainMenuController = new MainMenuController();
         mainMenuController.printOperationsMenu();
     }
 
-    public static void getCompanyDatas(Customer customer) {
+    public void getCompanyDatas(Customer customer) {
         String name, surname, title, telNo, mail, taxAdministration;
 
         do {
@@ -59,21 +63,17 @@ public class CustomerController {
 
         do {
             telNo = input.InputUtil.getInput("Tel no: ");
-        }
-
-        while (!ValidationUtil.isTelNo(telNo));
+        } while (!ValidationUtil.isTelNo(telNo));
 
         do {
             mail = input.InputUtil.getInput("Zorunlu değil - Mail: ");
-        }
-
-        while (!(mail.trim().equals("") || ValidationUtil.isMail(mail)));
+        } while (!(mail.trim().equals("") || ValidationUtil.isMail(mail)));
 
         do {
             taxAdministration = input.InputUtil.getInput("Vergi Dairesi: ");
-        }
+        } while (!ValidationUtil.isText(taxAdministration));
 
-        while (!ValidationUtil.isText(taxAdministration));
+
         customer.setName(name);
         customer.setSurname(surname);
         customer.setTitle(title);
@@ -83,7 +83,7 @@ public class CustomerController {
     }
 
 
-    public static void getPersonalDatas(Customer customer) {
+    public void getPersonalDatas(Customer customer) {
 
         String name, surname, title, telNo, mail, taxAdministration;
 
@@ -128,14 +128,13 @@ public class CustomerController {
 
     //---------------- Update customer methods ------------------------//
 
-    public static void updateCustomer() {
+    public void updateCustomer() {
         listCustomers();
 
-        String idNo;
 
 
 
-        Customer customer = findCustomerById("Güncellenecek Müşterinin ");
+        Optional<Customer> customer = findCustomerById("Güncellenecek Müşterinin ");
 
 
         String telNo, mail;
@@ -149,36 +148,43 @@ public class CustomerController {
         } while (!(ValidationUtil.isMail(mail) || mail.trim().equals("")));
 
 
-        customer.setTelNo(telNo);
-        customer.setMail(mail);
+        customer.get().setTelNo(telNo);
+        customer.get().setMail(mail);
 
-        System.out.println("Müşteri bilgilerinin güncellenmiş hali : \n" + CustomerService.updateCustomer(customer));
+        System.out.println("Müşteri bilgilerinin güncellenmiş hali : \n" + customerService.updateCustomer(customer.get()));
     }
 
 
     //  ------------------------------Delete Customer Methods-------------------------------------- //
-    public static void deleteCustomer() {
+    public void deleteCustomer() {
         listCustomers();
+       Optional<Customer>  customer=findCustomerById("Silinecek müşterinin");
+        if(customer.isPresent()){
+
+            String confirm = (input.InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n  E/H")).toUpperCase();
+            if (confirm.equals("E")) {
+
+                customerService.deleteCustomer(customer.get());
+                System.out.println("Kullanıcı Silindi");
 
 
-        Customer customer = findCustomerById("Silinecek müşterinin");
-        String confirm = (input.InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n  E/H")).toUpperCase();
-        if (confirm.equals("E")) {
-
-            CustomerService.deleteCustomer(customer);
-
-        } else if (confirm.equals("H")) {
-            System.out.println("\033[31m" + "\n İşlem iptal edildi ..." + "\033[0m");
+            } else if (confirm.equals("H")) {
+                System.out.println("\033[31m" + "\n İşlem iptal edildi ..." + "\033[0m");
+            }
         }
+        else{
+            System.out.println("Kullanıcı bulunamadı");
+            mainMenuController.printOperationsMenu();}
 
 
     }
 
-    public static void listCustomers() {
-        CustomerService.listCustomer();
-    }
+    public void listCustomers() {
+        List<Customer> customerList = customerService.listCustomer();
+        customerList.forEach(System.out::println);
 
-    public static Customer findCustomerById(String firstText) {
+    }
+    public Optional<Customer> findCustomerById(String firstText) {
         String id;
 
         do {
@@ -186,19 +192,15 @@ public class CustomerController {
         }
         while (!ValidationUtil.isNumber(id));
 
-
         Long idToFind = Long.parseLong(id);
-        Customer customer = CustomerService.findCustomerById(idToFind);
+        Optional<Customer> customer = customerService.findCustomerById(idToFind);
 
-        if (customer != null) {
+
             return customer;
-        } else {
-            return findCustomerById(firstText);
-        }
+
 
     }
 
     //----------------------Global Customer Methods------------------------------//
-
 
 }
