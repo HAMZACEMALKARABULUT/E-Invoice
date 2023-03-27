@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e41b8e0-7e6f-4e60-8b7b-88c70455c942" name="Changes" comment="The project was changed to maven and spring project .">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9e41b8e0-7e6f-4e60-8b7b-88c70455c942" name="Changes" comment="commit for looking">
       <change beforePath="$PROJECT_DIR$/E-Invoice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/E-Invoice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/edonusum/test/deneme/ValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/edonusum/test/deneme/ValidationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -114,7 +112,7 @@
       <workItem from="1679522075234" duration="7295000" />
       <workItem from="1679582684869" duration="1831000" />
       <workItem from="1679644977700" duration="5744000" />
-      <workItem from="1679893789369" duration="10605000" />
+      <workItem from="1679893789369" duration="11022000" />
     </task>
     <task id="LOCAL-00001" summary="07.03.2023 &#10;ProductController and menu added">
       <created>1678203488571</created>
@@ -172,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679646025809</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="commit for looking">
+      <created>1679926733392</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1679926733392</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +188,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="looking" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -198,7 +215,8 @@
     <MESSAGE value="Project is basicly done . I am cleaning the methods.Some unnecessary codes was removed." />
     <MESSAGE value="The project was changed to maven and spring project" />
     <MESSAGE value="The project was changed to maven and spring project ." />
-    <option name="LAST_COMMIT_MESSAGE" value="The project was changed to maven and spring project ." />
+    <MESSAGE value="commit for looking" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit for looking" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
