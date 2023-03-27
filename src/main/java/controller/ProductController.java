@@ -3,13 +3,16 @@ package controller;
 
 import entity.Product;
 import input.InputUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.ProductService;
 import validation.ValidationUtil;
 
 import java.util.Optional;
- 
+@Service
 public class ProductController {
-ProductService productService=new ProductService();
+    @Autowired
+private ProductService productService;
     //------------------------   CREATE METHODS   -------------------------//
     public  void createProduct() {
         String name, barcode, brand, unitPrice, quantity, vatRate, unit;

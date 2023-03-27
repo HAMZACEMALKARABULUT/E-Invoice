@@ -6,7 +6,8 @@ import entity.Product;
 import enums.Colors;
 import enums.InvoiceState;
 import input.InputUtil;
-import service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.InvoiceService;
 import validation.ValidationUtil;
 
@@ -17,11 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
+@Service
 public class InvoiceController {
-    MainMenuController mainMenuController = new MainMenuController();
-    InvoiceService invoiceService = new InvoiceService();
+    @Autowired
+    private MainMenuController mainMenuController;
 
+    @Autowired
+    private InvoiceService invoiceService;
 
     //-----------------------SUB MENU------------------------//
 
@@ -75,7 +78,7 @@ public class InvoiceController {
 
 
     public void setCustomerId(Invoice invoice) {
-        CustomerController customerController = new CustomerController(new MainMenuController(),new CustomerService());
+        CustomerController customerController = new CustomerController();
         customerController.listCustomers();
 
         invoice.setCustomerId(customerController.findCustomerById("Fatura oluşturulacak müşterinin").get().getId());

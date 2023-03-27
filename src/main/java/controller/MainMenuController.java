@@ -3,10 +3,19 @@ package controller;
 import entity.Invoice;
 import enums.Colors;
 import enums.InvoiceState;
-import service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MainMenuController {
+    @Autowired
+    private InvoiceController invoiceController;
+    @Autowired
 
+    private CustomerController customerController;
+    @Autowired
+
+    private ProductController productController;
 
 
 
@@ -49,7 +58,7 @@ public class MainMenuController {
 
 
     public void printCustomerMenu() {
-         CustomerController customerController=new CustomerController(new MainMenuController(),new CustomerService());
+
         System.out.println("  - -Müşteri İşlemleri- - ");
         System.out.println("1- Musteri Ekle");
         System.out.println("2- Müşteri Güncelle");
@@ -86,7 +95,7 @@ public class MainMenuController {
 
 
     public void printProductsMenu() {
-ProductController productController=new ProductController();
+
         System.out.println("- -Ürün İşlemleri- -");
         System.out.println("1- Ürün Ekle");
         System.out.println("2- Ürün Güncelle");
@@ -124,7 +133,7 @@ ProductController productController=new ProductController();
 
     public void printInvoiceMenu() {
 
-        InvoiceController invoiceController=new InvoiceController();
+
 
 
         System.out.println("  - -Fatura İşlemleri- - ");
