@@ -3,7 +3,7 @@ package com.edonusum.test.deneme;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import validation.ValidationUtil;
+import com.staj.proje.validation.ValidationUtil;
 
 
 public class ValidationTest {
@@ -138,11 +138,6 @@ public class ValidationTest {
         Assertions.assertTrue(moneyTypeResult3 ,moneyType3+" para birimi  geçerli olması gerekirken geçersiz oldu.");
         Assertions.assertTrue(moneyTypeResult4 ,moneyType4+" para birimi  geçerli olması gerekirken geçersiz oldu.");
         Assertions.assertTrue(moneyTypeResult5 ,moneyType5+" para birimi  geçerli olması gerekirken geçersiz oldu.");
-
-
-
-
-
 
 
 
