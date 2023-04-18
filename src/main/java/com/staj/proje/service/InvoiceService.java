@@ -16,13 +16,11 @@ public class InvoiceService {
     @Autowired
     InvoiceDao invoiceDao;
 
-    public  void saveInvoice(Invoice invoice){
-        invoiceDao.save(invoice);}
+    public  Invoice saveInvoice(Invoice invoice){
+      return  invoiceDao.save(invoice);}
 
-    public List<Invoice> getInvoiceListByState(InvoiceState status) {
-
-        return invoiceDao.findInvoiceByStatus(status.toString());
-
+    public List<Invoice> findInvoiceByStatusAndUserId(InvoiceState status, Long userId) {
+        return invoiceDao.findInvoiceByStatusAndUserId(status.toString(),userId);
     }
 
     public void setInvoiceState(Invoice invoice, InvoiceState status){
@@ -36,7 +34,5 @@ public class InvoiceService {
 
     }
 
-    public Invoice updateDraftInvoice(Invoice invoice ) {
-        return   invoiceDao.save(invoice);
-    }
+
 }

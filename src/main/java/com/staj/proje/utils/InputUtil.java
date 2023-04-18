@@ -1,4 +1,4 @@
-package com.staj.proje.input;
+package com.staj.proje.utils;
 
 import com.staj.proje.controller.MainMenuController;
 import com.staj.proje.enums.Colors;

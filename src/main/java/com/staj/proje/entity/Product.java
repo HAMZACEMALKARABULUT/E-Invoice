@@ -26,4 +26,8 @@ public @Data class Product implements Serializable {
     private short vatRate;//(varsayılan kdv oranı)
     @Column(name="brand")
     private String brand;
+
+    @Column(name="user_id")
+    private Long userId;
+
 }

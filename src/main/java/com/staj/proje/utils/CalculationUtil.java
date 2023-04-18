@@ -1,4 +1,4 @@
-package com.staj.proje.calculationUtil;
+package com.staj.proje.utils;
 
 import com.staj.proje.entity.Invoice;
 import com.staj.proje.entity.InvoiceLine;
@@ -6,7 +6,7 @@ import com.staj.proje.entity.Product;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class Calculation {
+public class CalculationUtil {
 
 public void calculateLine(int piece, Product product, InvoiceLine invoiceLine){
        invoiceLine.setPiece(piece);

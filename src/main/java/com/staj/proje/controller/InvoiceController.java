@@ -1,13 +1,10 @@
 package com.staj.proje.controller;
 
-import com.staj.proje.calculationUtil.Calculation;
-import com.staj.proje.entity.Customer;
-import com.staj.proje.entity.Invoice;
-import com.staj.proje.entity.InvoiceLine;
-import com.staj.proje.entity.Product;
+import com.staj.proje.utils.CalculationUtil;
+import com.staj.proje.entity.*;
 import com.staj.proje.enums.Colors;
 import com.staj.proje.enums.InvoiceState;
-import com.staj.proje.input.InputUtil;
+import com.staj.proje.utils.InputUtil;
 import com.staj.proje.service.InvoiceService;
 import com.staj.proje.validation.ValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,13 +25,9 @@ public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
 
-    //-----------------------SUB MENU------------------------//
+
     @Autowired
-    private CustomerController customerController;
-    @Autowired
-    private ProductController productController;
-    @Autowired
-    private Calculation calculation;
+    private CalculationUtil calculationUtil;
 
 
     public void subInvoiceMenu(Invoice invoice) {
@@ -53,14 +46,10 @@ public class InvoiceController {
 
             case "1":
                 setCustomerId(invoice);
-
-
                 break;
             case "2":
                 addInvoiceLines(invoice);
                 subInvoiceMenu(invoice);
-
-
                 break;
 
             case "3":
@@ -88,7 +77,7 @@ public class InvoiceController {
 
 
     public void setCustomerId(Invoice invoice) {
-
+/*
         customerController.listCustomers();
 
         Optional<Customer> customer = customerController.findCustomerById("Fatura oluşturulacak müşterinin");
@@ -103,13 +92,13 @@ public class InvoiceController {
         System.out.println(Colors.BLUE.getCode() + "Müşteri Id Faturaya Eklendi.." + Colors.BLUE.getLastCode());
 
         subInvoiceMenu(invoice);
-
+*/
 
     }
 
     public void addInvoiceLines(Invoice invoice) {
 
-        productController.listProducts();
+
         List<InvoiceLine> invoiceLineList = new ArrayList<>();
         InvoiceLine invoiceLine;
 
@@ -117,18 +106,17 @@ public class InvoiceController {
         do {
             invoiceLine = new InvoiceLine();
 
-            Optional<Product> product = productController.findProductById("Faturaya eklenecek ürünün ");
+            Optional<Product> product = Optional.of(new Product());
             if (!product.isPresent()) {
                 continue;
             }
             String piece;
             do {
-
                 piece = InputUtil.getInput("Adet giriniz .");
 
             } while (!ValidationUtil.isNumber(piece));
 
-            calculation.calculateLine(Integer.parseInt(piece), product.get(), invoiceLine);
+            calculationUtil.calculateLine(Integer.parseInt(piece), product.get(), invoiceLine);
             System.out.println(Colors.YELLOW.getCode() + "İşlemi bitirmek için ' tamam ' yazınız," + " devam etmek için herhangi bir tuşa basınız ." + Colors.YELLOW.getLastCode());
             invoiceLineList.add(invoiceLine);
 
@@ -161,10 +149,9 @@ public class InvoiceController {
             moneyType = InputUtil.getInput("Para birimini giriniz  |  örnek : eur , tl ,usd , ₺ , € , $");
         } while (!ValidationUtil.isMoneyType(moneyType));
 
-        calculation.calculateTotalTax(invoice);
-        calculation.calculateTotalCost(invoice);
+        calculationUtil.calculateTotalTax(invoice);
+        calculationUtil.calculateTotalCost(invoice);
         invoice.setMoneyType(moneyType);
-
     }
 
     public String generateUuid() {
@@ -231,8 +218,8 @@ public class InvoiceController {
     }
 
     public Optional<List<Invoice>> getInvoiceListByState(InvoiceState invoiceState) {
+        List<Invoice> filterList = invoiceService.findInvoiceByStatusAndUserId(invoiceState, 2L);
 
-        List<Invoice> filterList = invoiceService.getInvoiceListByState(invoiceState);
         if (filterList.isEmpty()) {
             System.out.println(Colors.RED.getCode() + "Belirtilen özellikte Fatura bulunmamaktadır" + Colors.RED.getLastCode());
         }
@@ -286,18 +273,18 @@ public class InvoiceController {
             while (!(newPiece.trim().equals("") || ValidationUtil.isNumber(newPiece)));
 
             if (ValidationUtil.isNumber(newPiece)) {
-                calculation.calculateLine(Integer.parseInt(newPiece), invoiceLine.getProduct(), invoiceLine);
+                calculationUtil.calculateLine(Integer.parseInt(newPiece), invoiceLine.getProduct(), invoiceLine);
             }
 
         }
         setMoneyType(invoice);
 
-        calculation.calculateTotalCost(invoice);
+        calculationUtil.calculateTotalCost(invoice);
 
-        calculation.calculateTotalCost(invoice);
+        calculationUtil.calculateTotalCost(invoice);
 
 
-        System.out.println(invoiceService.updateDraftInvoice(invoice));
+        System.out.println(invoiceService.saveInvoice(invoice));
 
         System.out.println(Colors.GREEN.getCode() + "Güncelleme gerçekleşti..." + Colors.GREEN.getLastCode());
 

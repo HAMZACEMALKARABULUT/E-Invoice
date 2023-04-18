@@ -14,7 +14,7 @@ import java.util.List;
 public @Data class Invoice implements Serializable {
      @Id
      @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long Id;
+    private long id;
     @Column(name="customer_id")
     private long customerId;
 
@@ -35,12 +35,14 @@ public @Data class Invoice implements Serializable {
     private String uuid;
     @Column(name="status")
     private String status;
-
+    @Column(name="user_id")
+    private Long userId;
 
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     @JoinColumn(name = "invoice_id")
     private List<InvoiceLine> invoiceLines;
+
 
 
 

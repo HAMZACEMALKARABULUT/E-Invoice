@@ -1,11 +1,16 @@
 package com.staj.proje.controller;
 
+import com.staj.proje.context.Context;
+import com.staj.proje.context.RequestContext;
 import com.staj.proje.entity.Invoice;
+import com.staj.proje.entity.User;
 import com.staj.proje.enums.Colors;
 import com.staj.proje.enums.InvoiceState;
-import com.staj.proje.input.InputUtil;
+import com.staj.proje.utils.InputUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import java.util.Optional;
 
 @Controller
 public class MainMenuController {
@@ -17,6 +22,12 @@ public class MainMenuController {
     @Autowired
 
     private CustomerController customerController;
+    @Autowired
+    private UserController userController;
+    @Autowired
+
+    private Context context;
+
 
     public void printOperationsMenu() {
 
@@ -25,9 +36,8 @@ public class MainMenuController {
         System.out.println("1- Musteri menüsü");
         System.out.println("2- Ürün menüsü");
         System.out.println("3- Fatura menüsü");
-        System.out.println("4- Çıkış yap");
-        // System.out.println("3- Fatura olustur");
-        // System.out.println("4- Fatura Listele");
+        System.out.println("4- Kullanıcı menüsü");
+        System.out.println("5- Çıkış yap");
 
 
         switch (selectOperation()) {
@@ -40,7 +50,13 @@ public class MainMenuController {
 
             case "3":
                 printInvoiceMenu();
+                break;
+
             case "4":
+                printUserMenu();
+                break;
+
+            case "5":
                 System.out.println("Çıkış yapılıyor ....");
                 System.exit(0);
                 break;
@@ -52,6 +68,21 @@ public class MainMenuController {
         }
 
 
+    }
+
+    public void printAuthentication() {
+        Optional<User> user = userController.userLoginControl();
+        if (user.isPresent()) {
+
+            System.out.println(Colors.BLUE.getCode() + "Giriş başarılı . Yönelendirme yapılıyor ." + Colors.BLUE.getLastCode());
+            RequestContext requestContext = new RequestContext();
+            requestContext.setUser(user.get());
+            context.setCurrentUser(requestContext);
+            printUserMenu();
+        } else {
+            System.out.println(Colors.RED.getCode() + "Kullanıcı bulunamadı , Bilgileri doğru girdiğinizden emin olunuz" + Colors.RED.getLastCode());
+            printAuthentication();
+        }
     }
 
 
@@ -100,6 +131,48 @@ public class MainMenuController {
 
     }
 
+    public void printUserMenu() {
+
+        System.out.println("  - -Kullanıcı işlemleri- - ");
+        System.out.println("1- Kullanıcı Ekle");
+        System.out.println("2- Kullanıcı Güncelle");
+        System.out.println("3- Kullanıcı Sil");
+        System.out.println("4- Kullanıcı Listele");
+        System.out.println("5- Ana Menüye Dön");
+
+
+        switch (selectOperation()) {
+            case "1":
+                userController.registerNewUser();
+                printCustomerMenu();
+                break;
+            case "2":
+                userController.addUserRole();
+                printCustomerMenu();
+                break;
+
+            case "3":
+
+
+                break;
+            case "4":
+                userController.listUsers();
+                printCustomerMenu();
+                break;
+            case "5":
+                printOperationsMenu();
+                printCustomerMenu();
+
+                break;
+            default:
+                System.out.println("Menü içerisinde ki seçeneklerden birini seçiniz !");
+                printOperationsMenu();
+                break;
+
+        }
+
+    }
+
 
     public void printProductsMenu() {
 
@@ -111,24 +184,6 @@ public class MainMenuController {
         System.out.println("5- Ana Menüye Dön");
 
         switch (selectOperation()) {
-
-            case "1":
-                productController.createProduct();
-                printProductsMenu();
-                break;
-            case "2":
-                productController.updateProduct();
-                printProductsMenu();
-                break;
-
-            case "3":
-                productController.deleteProduct();
-                printProductsMenu();
-                break;
-            case "4":
-                productController.listProducts();
-                printProductsMenu();
-                break;
 
             case "5":
                 printOperationsMenu();

@@ -1,20 +1,24 @@
 package com.staj.proje.controller;
 
+import com.staj.proje.context.Context;
 import com.staj.proje.entity.Customer;
-import com.staj.proje.input.InputUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import com.staj.proje.service.CustomerService;
+import com.staj.proje.utils.InputUtil;
 import com.staj.proje.validation.ValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Controller
 public class CustomerController {
 
-   @Autowired
+    @Autowired
     private CustomerService customerService;
+    @Autowired
+    private Context context;
+
 
     public void createCustomer() {
 
@@ -158,8 +162,8 @@ public class CustomerController {
 
     public void deleteCustomer() {
         listCustomers();
-       Optional<Customer>  customer=findCustomerById("Silinecek müşterinin");
-        if(customer.isPresent()){
+        Optional<Customer> customer = findCustomerById("Silinecek müşterinin");
+        if (customer.isPresent()) {
 
             String confirm = (InputUtil.getInput("Silmek İstediğinize Emin misiniz? \n  E/H")).toUpperCase();
             if (confirm.equals("E")) {
@@ -171,15 +175,16 @@ public class CustomerController {
             } else if (confirm.equals("H")) {
                 System.out.println("\033[31m" + "\n İşlem iptal edildi ..." + "\033[0m");
             }
+        } else {
+            System.out.println("Kullanıcı Bulunamadı");
         }
-        else{System.out.println("Kullanıcı Bulunamadı");
-          }
 
 
     }
 
     public void listCustomers() {
-        List<Customer> customerList = customerService.listCustomer();
+
+        List<Customer> customerList = customerService.findCustomersByUserId(context.getCurrentUser().get().getUser().getId());
         customerList.forEach(System.out::println);
 
     }
@@ -196,7 +201,7 @@ public class CustomerController {
         Optional<Customer> customer = customerService.findCustomerById(idToFind);
 
 
-            return customer;
+        return customer;
     }
 
     //----------------------Global Customer Methods------------------------------//

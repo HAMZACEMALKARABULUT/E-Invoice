@@ -25,8 +25,8 @@ public  class CustomerService {
          customerDao.delete(customer);
     }
 
-    public List<Customer> listCustomer() {
-        return customerDao.findAll();
+    public List<Customer> findCustomersByUserId(Long userId) {
+        return customerDao.findCustomersByUserId(userId);
     }
 
     public Optional<Customer> findCustomerById(Long id) {

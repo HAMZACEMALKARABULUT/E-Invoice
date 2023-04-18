@@ -1,6 +1,5 @@
 package com.staj.proje;
 
-import com.staj.proje.controller.MainMenuController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -12,6 +11,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("com.staj.proje.*")
 @ComponentScan(basePackages = { "com.staj.proje.*" })
 @EntityScan("com.staj.proje.*")
+
 public class Main {
 
 
@@ -21,9 +21,5 @@ public class Main {
 
         ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
 
-
-        while(true){
-
-        context.getBean(MainMenuController.class).printOperationsMenu();}
     }
 }

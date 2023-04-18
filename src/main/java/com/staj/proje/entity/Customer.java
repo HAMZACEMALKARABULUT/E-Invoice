@@ -29,5 +29,7 @@ public @Data class Customer implements Serializable {
     private String taxAdministration;
     @Column(name = "title")
     private String title;
+    @Column(name="user_id")
+    private Long userId;
 }
 

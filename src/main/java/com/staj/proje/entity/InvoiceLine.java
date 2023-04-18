@@ -1,11 +1,11 @@
 package com.staj.proje.entity;
 
 
-import lombok.Data;
-import lombok.ToString;
+        import lombok.Data;
+        import lombok.ToString;
 
-import javax.persistence.*;
-import java.io.Serializable;
+        import javax.persistence.*;
+        import java.io.Serializable;
 
 @Table(name = "invoice_line")
 @Entity(name = "InvoiceLine")
@@ -25,5 +25,7 @@ public @Data class InvoiceLine implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
     private Product product;
+
+
 
 }

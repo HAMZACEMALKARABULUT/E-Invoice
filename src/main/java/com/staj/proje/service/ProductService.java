@@ -27,17 +27,19 @@ public class ProductService {
             return productDao.save(product);
         }
 
-        public List<Product> listProducts() {
+        public List<Product> listProducts(Long userId) {
 
-            return  productDao.findAll();
+            return  productDao.findByUserId(userId);
         }
 
-        public Optional<Product> findProductById(String idNo){
+        public Optional<Product> findProductById(Long id){
 
-            return productDao.findById(Long.parseLong(idNo));
+            return productDao.findById(id);
     }
 
 
+    public Optional<Product> findProductByName(String name) {
+        return Optional.of(productDao.findByName(name));
 
-
+    }
 }

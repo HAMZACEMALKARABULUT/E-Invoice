@@ -10,5 +10,5 @@ import java.util.List;
 public interface InvoiceDao extends JpaRepository<Invoice,Long> {
 
 
-    List<Invoice> findInvoiceByStatus(String status);
+    List<Invoice> findInvoiceByStatusAndUserId(String status, Long id);
 }
