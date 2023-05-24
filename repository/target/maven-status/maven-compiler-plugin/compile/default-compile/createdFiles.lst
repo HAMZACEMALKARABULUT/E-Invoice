@@ -1,0 +1,11 @@
+com\izibiz\repository\entity\CustomerEntity.class
+com\izibiz\repository\entity\InvoiceLineEntity.class
+com\izibiz\repository\entity\RoleEntity.class
+com\izibiz\repository\repository\ProductRepository.class
+com\izibiz\repository\repository\CustomerRepository.class
+com\izibiz\repository\repository\InvoiceRepository.class
+com\izibiz\repository\entity\InvoiceEntity.class
+com\izibiz\repository\repository\UserRepository.class
+com\izibiz\repository\entity\ProductEntity.class
+com\izibiz\repository\entity\UserEntity.class
+com\izibiz\repository\repository\RoleRepository.class
