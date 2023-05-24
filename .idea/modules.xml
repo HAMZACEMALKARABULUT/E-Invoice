@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/E-Invoice.iml" filepath="$PROJECT_DIR$/E-Invoice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edonusum-staj.iml" filepath="$PROJECT_DIR$/edonusum-staj.iml" />
     </modules>
   </component>
 </project>

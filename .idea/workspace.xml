@@ -5,65 +5,227 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e41b8e0-7e6f-4e60-8b7b-88c70455c942" name="Changes" comment="The Project's controller methods is converted to Api . Product controller was converted.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_api_0_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_impl_0_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_jackson_0_11_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_71.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_71.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_71.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/api/ProductAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/configuration/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/context/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/context/RequestContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/RoleDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dto/ProductDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/filter/JwtTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/UserDetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/090c8071df9248cb4c4b37df40f163ad8488e251" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/e/1e8ff0b47aca5159e8e2d347ec91aeef37fab205" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/4/341d0f77f77a93f230f3739cc297cb5b1d67ed1c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/5/45717798d2705705330fefcfc351accfc0fba325" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e617bc150d61ccd653b6fd9038350544837c272" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/d/8dfbf92858e461035c4b259c851562e9daf9756d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/1/a1f4042fbcf78e2ab86d486176a2378cd0a26e9a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/5/b5d5809856278ff203c70e844106951a66fd48b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/c/bcc50a7b737499ddd5f91979294ac9e95e925907" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/2/f208093e9db4837029cd229aed10c5c3cb4e7c49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/e/fe5c43214168bd8de1d8afa275215a8e9b9de634" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/090c8071df9248cb4c4b37df40f163ad8488e251" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/e/1e8ff0b47aca5159e8e2d347ec91aeef37fab205" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/4/341d0f77f77a93f230f3739cc297cb5b1d67ed1c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/5/45717798d2705705330fefcfc351accfc0fba325" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e617bc150d61ccd653b6fd9038350544837c272" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/d/8dfbf92858e461035c4b259c851562e9daf9756d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/1/a1f4042fbcf78e2ab86d486176a2378cd0a26e9a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/5/b5d5809856278ff203c70e844106951a66fd48b2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/c/bcc50a7b737499ddd5f91979294ac9e95e925907" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/2/f208093e9db4837029cd229aed10c5c3cb4e7c49" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/e/fe5c43214168bd8de1d8afa275215a8e9b9de634" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/CustomerAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/InvoiceAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/ProductAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/aspect/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/configuration/CorsConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/RequestContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/InvoiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/CustomerDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/Error.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceLineDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/UserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/filter/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/mapper/CustomerDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/mapper/InvoiceDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/mapper/ProductDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/mapper/UserDtoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/edonusum-staj.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/InvoiceEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/InvoiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/CustomerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/InvoiceAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/ProductAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/RoleAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/UserAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/CustomerAdapterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/InvoiceAdapterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/ProductAdapterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/RoleAdapterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/UserAdapterImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/InvoiceLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/CustomerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/ErrorGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/exception/CustomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/CustomerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/InvoiceMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/InvoiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/util/CalculationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_13_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_8_0_32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_activation_jakarta_activation_1_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_4_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_api_0_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_impl_0_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_jackson_0_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_persistence_jakarta_persistence_api_2_2_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_transaction_jakarta_transaction_api_1_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_12_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_17_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_pdfbox_fontbox_2_0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_pdfbox_pdfbox_2_0_27.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_71.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_6_15_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_4_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_3_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_7_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_7_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_7_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_3_25.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_30.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/E-Invoice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/E-Invoice.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/calculationUtil/Calculation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/CalculationUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/InvoiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/InvoiceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/InvoiceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/InvoiceLine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/input/InputUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/InputUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/InvoiceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/api/ProductAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/configuration/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/context/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/context/RequestContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/InvoiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/MainMenuController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/CustomerDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/InvoiceDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/RoleDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/domain/Invoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/InvoiceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/InvoiceLineEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/ProductEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/RoleEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/enums/Colors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/enums/InvoiceState.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/InvoiceState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/filter/JwtTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/InvoiceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/RoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/UserDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/UserDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/CalculationUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/InputUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/staj/proje/validation/ValidationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/validation/ValidationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/banner.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/banner.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/edonusum/test/deneme/ValidationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/test/ValidationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/banner.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/edonusum-staj-1.0-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.edonusum.test.deneme.DenemeTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.edonusum.test.deneme.ValidationTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.edonusum.test.deneme.DenemeTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.edonusum.test.deneme.ValidationTest.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,8 +238,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -105,9 +267,19 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.25/spring-web-5.3.25.jar!/org/springframework/web/bind/annotation/RequestParam.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.3.25/spring-web-5.3.25.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class" root0="SKIP_INSPECTION" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.3.25/spring-webmvc-5.3.25.jar!/org/springframework/web/servlet/DispatcherServlet.class" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/InvoiceController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -131,6 +303,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/E-Invoice&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -140,8 +313,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.4448276&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;a658ec6aa17a5c556a6c87220eb740a8&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;6b6115756bcca28ac08fb16c75cd85ed&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -152,15 +325,36 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.izibiz.mapper" />
       <recent name="com.staj.proje.controller" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java Projects\E-Invoice\api\src\main\resources" />
+      <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz\util" />
+      <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz\mapper" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java Projects\E-Invoice\api\src\main\java\com\izibiz" />
+      <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz" />
+      <recent name="D:\Java Projects\E-Invoice\repository\src\main\java\com\izibiz\" />
+      <recent name="D:\Java Projects\E-Invoice\repository\src\main\java\com\izibiz" />
+      <recent name="D:\Java Projects\E-Invoice\api\src\main\java\com\izibiz\" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.izibiz" />
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.izibiz.service.domain" />
+      <recent name="com.izibiz.mapper" />
+      <recent name="com.staj.proje.domain" />
+      <recent name="com.staj.proje.entity" />
     </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="Main" />
+      <command value="mvn clean install" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Main">
@@ -172,12 +366,16 @@
       </method>
     </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="E-Invoice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.staj.proje.Main" />
+      <module name="api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.izibiz.api.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Spring Boot.Main" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -231,7 +429,44 @@
       <workItem from="1681725647735" duration="5171000" />
       <workItem from="1681778198399" duration="7346000" />
       <workItem from="1681799454807" duration="3744000" />
-      <workItem from="1681803259857" duration="4615000" />
+      <workItem from="1681803259857" duration="20134000" />
+      <workItem from="1681829112781" duration="890000" />
+      <workItem from="1681888867132" duration="24001000" />
+      <workItem from="1682116738539" duration="688000" />
+      <workItem from="1682332587789" duration="10348000" />
+      <workItem from="1682382450142" duration="16038000" />
+      <workItem from="1682440707044" duration="1047000" />
+      <workItem from="1682492867445" duration="1085000" />
+      <workItem from="1682494487654" duration="38000" />
+      <workItem from="1682494558750" duration="64000" />
+      <workItem from="1682494667669" duration="17857000" />
+      <workItem from="1682586037376" duration="6698000" />
+      <workItem from="1682678655775" duration="15673000" />
+      <workItem from="1682721444968" duration="3514000" />
+      <workItem from="1682769159782" duration="7721000" />
+      <workItem from="1682882493862" duration="975000" />
+      <workItem from="1682891454660" duration="71000" />
+      <workItem from="1682978547756" duration="615000" />
+      <workItem from="1683011665955" duration="28675000" />
+      <workItem from="1683152586813" duration="4792000" />
+      <workItem from="1683161552954" duration="2133000" />
+      <workItem from="1683184443052" duration="8355000" />
+      <workItem from="1683200969658" duration="567000" />
+      <workItem from="1683202974857" duration="13981000" />
+      <workItem from="1683284184425" duration="11533000" />
+      <workItem from="1683297391729" duration="1267000" />
+      <workItem from="1683376685510" duration="713000" />
+      <workItem from="1683616735569" duration="16864000" />
+      <workItem from="1683642767616" duration="6036000" />
+      <workItem from="1683703309655" duration="26144000" />
+      <workItem from="1684244098931" duration="7083000" />
+      <workItem from="1684307857102" duration="4948000" />
+      <workItem from="1684345186380" duration="5597000" />
+      <workItem from="1684399027517" duration="10351000" />
+      <workItem from="1684745527956" duration="813000" />
+      <workItem from="1684749025700" duration="3163000" />
+      <workItem from="1684826045120" duration="2120000" />
+      <workItem from="1684915133702" duration="2363000" />
     </task>
     <task id="LOCAL-00001" summary="07.03.2023 &#10;ProductController and menu added">
       <created>1678203488571</created>
@@ -310,7 +545,21 @@
       <option name="project" value="LOCAL" />
       <updated>1680616888832</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="The Project's controller methods is converted to Api . Product controller was converted.">
+      <created>1681808404945</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681808404945</updated>
+    </task>
+    <task id="LOCAL-00013" summary="The Project's controller methods is converted to Api . Product controller was converted.">
+      <created>1681808626993</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681808626993</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,14 +640,25 @@
           <properties class="org.hibernate.TransientObjectException" package="org.hibernate" />
           <option name="timeStamp" value="23" />
         </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NullPointerException" package="java.lang" />
-          <option name="timeStamp" value="24" />
-        </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/CustomerAPI.java</url>
+          <line>16</line>
+          <properties class="com.izibiz.api.api.CustomerAPI" method="getCustomers">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="com.staj.proje.dto.InvoiceDto" memberName="totalTax" />
         <PinnedItemInfo parentTag="entity.Invoice" memberName="invoiceLines" />
       </pinned-members>
     </pin-to-top-manager>
