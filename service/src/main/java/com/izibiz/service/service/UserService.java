@@ -23,6 +23,9 @@ public class UserService {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
     }
+    public String encodePassword(String password){
+        return passwordEncoder.encode(password);
+    }
 
 
     public void deleteUser(User user) {
@@ -30,9 +33,9 @@ userAdapter.delete(user);
     }
 
     public Optional<User> findUserBymail(String mail) {
-        Optional<User> user = Optional.ofNullable(userAdapter.findByMail(mail));
 
-        return user;
+        return   userAdapter.findByMail(mail);
+
     }
 
     public boolean userAuthentication(User user, String password) {

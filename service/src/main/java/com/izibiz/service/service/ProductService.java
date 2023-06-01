@@ -37,17 +37,17 @@ public class ProductService {
         if (product == null || StringUtils.isBlank(product.getName())) {
             throw new CustomException("Ürün adı boş olamaz!", ErrorCode.MISSING_PARAMETER);
         } else if (product.getUnitPrice() == null
-                &&
-                !ValidationUtil.isNumber(String.valueOf(product.getUnitPrice()))) {
+                ||
+                !ValidationUtil.isPrice(String.valueOf(product.getUnitPrice()))) {
             throw new CustomException("Birim fiyatı boş olamaz", ErrorCode.MISSING_PARAMETER);
 
         } else if (product.getVatRate() == null
-                &&
-                !ValidationUtil.isNumber(String.valueOf(product.getVatRate()))) {
+                ||
+                !ValidationUtil.isPrice(String.valueOf(product.getVatRate()))) {
             throw new CustomException("Kdv oranı boş olamaz ", ErrorCode.MISSING_PARAMETER);
 
         } else if (product.getUnit() == null
-                &&
+                ||
                 !ValidationUtil.isText(product.getUnit())) {
             throw new CustomException("Birim boş olamaz ", ErrorCode.MISSING_PARAMETER);
 

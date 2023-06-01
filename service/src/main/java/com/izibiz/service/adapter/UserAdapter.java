@@ -12,5 +12,5 @@ public interface UserAdapter {
 
     User delete(User user);
 
-    User findByMail(String mail);
+    Optional<User> findByMail(String mail);
 }

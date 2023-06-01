@@ -9,12 +9,10 @@ import com.izibiz.api.mapper.InvoiceDtoMapper;
 import com.izibiz.service.domain.Invoice;
 import com.izibiz.service.enums.InvoiceState;
 import com.izibiz.service.service.InvoiceService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class InvoiceController implements InvoiceAPI {
@@ -45,10 +43,11 @@ InvoiceDto invoiceDto=invoiceMapper.toDto(invoiceService.setInvoiceStatus(id,use
     public Response<InvoiceDto> createInvoice(InvoiceDto invoiceDto) {
 
         Long userId = Context.getCurrentUser().getUserId();
+
        Invoice invoice  = invoiceMapper.toInvoice(invoiceDto);
 
         invoice.setStatus(InvoiceState.DRAFT.toString());
-        ;
+
         InvoiceDto returnDto=invoiceMapper.toDto(invoiceService.createInvoice(invoice,userId));
 
         return Response.<InvoiceDto>builder().data(returnDto).build();
@@ -84,12 +83,8 @@ InvoiceDto invoiceDto=invoiceMapper.toDto(invoiceService.setInvoiceStatus(id,use
     @Override
     public Response<List<InvoiceDto>> getInvoicesByState(InvoiceState invoiceState) {
         Long userId = Context.getCurrentUser().getUserId();
-        List<InvoiceDto> invoicesDto = invoiceService.getInvoicesByStatus(invoiceState.toString(),userId).stream().map(invoice -> {
 
-            InvoiceDto invoiceDto = new InvoiceDto();
-            BeanUtils.copyProperties(invoice, invoiceDto);
-            return invoiceDto;
-        }).collect(Collectors.toList());
+        List<InvoiceDto> invoicesDto =invoiceMapper.toInvoiceDtoList( invoiceService.getInvoicesByStatus(invoiceState.toString(),userId));
 
         return Response.<List<InvoiceDto>>builder().data(invoicesDto).build();
     }

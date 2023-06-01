@@ -1,47 +1,14 @@
 package com.izibiz.api.context;
 
-import java.net.InetAddress;
+import lombok.Data;
 
-public class RequestContext {
+import java.util.List;
 
+public @Data class RequestContext {
     private Long userId;
     private String ipAdress;
+    private String username;
 
-    public Long getUserId() {
-        return userId;
-        
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public String getIpAdress() {
-        return ipAdress;
-    }
-
-    public void setIpAdress(String ipAdress) {
-
-        this.ipAdress = ipAdress;
-    }
-
-    public  RequestContext(){
-
-       InetAddress ip;
-       try {
-
-           ip = InetAddress.getLocalHost();
-
-           this.ipAdress= ip.getHostAddress();
-
-       } catch (Exception e) {
-
-           System.out.print(e);
-
-       }
-
-
-
-   }
+    private List<String> roles;
 
 }

@@ -76,17 +76,18 @@ public class CustomerService {
 
 
     public Customer updateCustomer(Customer customer, Long userId) {
+        customer.setState(CustomerState.ACTIVE.toString());
         if (customer.getIdentifier() != null && ValidationUtil.isIdNo(customer.getIdentifier().toString())
-                && existsByIdentifierAndUserId(customer.getIdentifier(), userId)) {
-            return personalDataControl(customer) ? customerAdapter.save(customer).get() :null;
+                && !existsByIdentifierAndUserId(customer.getIdentifier(), userId)) {
+            return personalDataControl(customer) ? customerAdapter.save(customer).get() : null;
 
         } else if (customer.getIdentifier() != null && ValidationUtil.isTaxNo(customer.getIdentifier().toString())
-                && existsByIdentifierAndUserId(customer.getIdentifier(), userId)) {
+                && !existsByIdentifierAndUserId(customer.getIdentifier(), userId)) {
 
-            return companyDataControl(customer) ? customerAdapter.save(customer).get() :null ;
+            return companyDataControl(customer) ? customerAdapter.save(customer).get() : null;
         }
 
-        throw (new CustomException(("Tanımlayıcı bilgiler değiştirilememektedir."),ErrorCode.MISSING_PARAMETER));
+        throw (new CustomException(("Bu tanımlayıcıya ait başka bir kayıt bulunmaktadır."), ErrorCode.MISSING_PARAMETER));
 
     }
 
@@ -95,23 +96,27 @@ public class CustomerService {
         if (customer.isPresent()) {
             if (customer.get().getState().equals(CustomerState.PASSIVE.toString())) {
 
-                throw(new CustomException("Böyle bir müşteri bulunmamaktadır.",ErrorCode.RECORD_NOT_FOUND));
+                throw (new CustomException("Böyle bir müşteri bulunmamaktadır.", ErrorCode.RECORD_NOT_FOUND));
             } else {
                 customer.get().setState(CustomerState.PASSIVE.toString());
                 customerAdapter.save(customer.get());
                 return true;
             }
-        } else throw(new CustomException("Böyle bir müşteri bulunmamaktadır.",ErrorCode.RECORD_NOT_FOUND));
+        } else throw (new CustomException("Böyle bir müşteri bulunmamaktadır.", ErrorCode.RECORD_NOT_FOUND));
     }
+
     public List<Customer> getCustomers(Long userId) {
 
         return customerAdapter
-                .findCustomersByUserId(userId);}
+                .findCustomersByUserId(userId);
+    }
+
     public Optional<Customer> findById(Long id, Long userId) {
 
         return customerAdapter
                 .findByUserIdAndId(userId, id);
     }
+
     public Boolean existsByIdentifierAndUserId(String identifier, Long userId) {
 
         return customerAdapter
@@ -119,28 +124,6 @@ public class CustomerService {
     }
 }
 
-//mail zorunlu değil
-//validasyon
-//servise obje gönder
-//tostring overrriding
-//telefon no al zorunlu
-//vergi dairesi al zorunlu
-
-
-
-
-/*   public static String isTrueFormatCycle(String printText,String regex,boolean isNullable) {
-         String inputText;
-         if (isValidText( inputText= CustomerController.getInput(printText), regex, isNullable)) {
-
-             return inputText;
-         } else {
-             System.out.println("Yanlış Formatta Giriş Yaptınız.\nDoğru Formatta Giriniz.");
-
-             return isTrueFormatCycle(printText, regex, isNullable);
-         }
-
-     } */
 
 
 

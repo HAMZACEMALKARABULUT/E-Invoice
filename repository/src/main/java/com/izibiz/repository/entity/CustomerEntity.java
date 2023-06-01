@@ -31,7 +31,7 @@ public @Data class CustomerEntity implements Serializable {
     private String title;
     @Column(name="user_id")
     private Long userId;
-@Column(name="state")
+    @Column(name="state")
     private  String state;
 }
 

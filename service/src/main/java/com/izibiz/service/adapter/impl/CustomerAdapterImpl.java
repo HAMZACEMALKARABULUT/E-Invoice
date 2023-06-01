@@ -41,7 +41,7 @@ public class CustomerAdapterImpl implements CustomerAdapter {
     @Override
     public Optional<Customer> save(Customer customer) {
         return Optional.of(customerMapper.fromEntityToDomain(
-                customerRepository.save(customerMapper.fromDomainToEntity(customer))));
+        customerRepository.save(customerMapper.fromDomainToEntity(customer))));
     }
 
     public Optional<Customer> delete(Customer customer) {
