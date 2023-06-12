@@ -2,8 +2,12 @@ package com.izibiz.api.dto;
 
 import lombok.Data;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
-
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public @Data class InvoiceLineDto implements Serializable {
 
 

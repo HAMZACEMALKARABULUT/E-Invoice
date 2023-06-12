@@ -2,19 +2,22 @@ package com.izibiz.api.controller;
 
 
 import com.izibiz.api.api.InvoiceAPI;
-import com.izibiz.api.context.Context;
 import com.izibiz.api.dto.InvoiceDto;
 import com.izibiz.api.dto.Response;
 import com.izibiz.api.mapper.InvoiceDtoMapper;
+import com.izibiz.api.utils.XmlUtil;
+import com.izibiz.common.context.Context;
 import com.izibiz.service.domain.Invoice;
 import com.izibiz.service.enums.InvoiceState;
 import com.izibiz.service.service.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
 import java.util.List;
 
-@Component
+@Controller
 public class InvoiceController implements InvoiceAPI {
 
 
@@ -28,7 +31,8 @@ private InvoiceDtoMapper invoiceMapper;
 
 
     //----------------------CREATE INVOICE METHODS -------------------------//
-
+@Autowired
+private XmlUtil xmlUtil;
 
 
 
@@ -40,7 +44,7 @@ InvoiceDto invoiceDto=invoiceMapper.toDto(invoiceService.setInvoiceStatus(id,use
      return Response.<InvoiceDto>builder().data(invoiceDto).build();
     }
 @Override
-    public Response<InvoiceDto> createInvoice(InvoiceDto invoiceDto) {
+    public Response<InvoiceDto> createInvoice(InvoiceDto invoiceDto) throws JAXBException, IOException {
 
         Long userId = Context.getCurrentUser().getUserId();
 
@@ -50,9 +54,9 @@ InvoiceDto invoiceDto=invoiceMapper.toDto(invoiceService.setInvoiceStatus(id,use
 
         InvoiceDto returnDto=invoiceMapper.toDto(invoiceService.createInvoice(invoice,userId));
 
+        xmlUtil.convertInvoiceToXml(returnDto);
+
         return Response.<InvoiceDto>builder().data(returnDto).build();
-
-
     }
 @Override
     public Response<List<InvoiceDto>> getInvoices() {
@@ -88,6 +92,7 @@ InvoiceDto invoiceDto=invoiceMapper.toDto(invoiceService.setInvoiceStatus(id,use
 
         return Response.<List<InvoiceDto>>builder().data(invoicesDto).build();
     }
+
 
 
 

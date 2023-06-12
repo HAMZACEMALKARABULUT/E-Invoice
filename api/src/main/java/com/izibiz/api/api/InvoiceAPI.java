@@ -6,6 +6,8 @@ import com.izibiz.api.dto.InvoiceDto;
 import com.izibiz.service.enums.InvoiceState;
 import org.springframework.web.bind.annotation.*;
 
+import javax.xml.bind.JAXBException;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -15,7 +17,7 @@ public interface InvoiceAPI {
     @GetMapping
     Response<List<InvoiceDto>> getInvoices();
     @PostMapping
-    Response<InvoiceDto> createInvoice(@RequestBody InvoiceDto invoiceDto);
+    Response<InvoiceDto> createInvoice(@RequestBody InvoiceDto invoiceDto) throws JAXBException, IOException;
     @GetMapping("/{name}")
     Response<List<InvoiceDto>> getInvoicesByState(InvoiceState state);
 

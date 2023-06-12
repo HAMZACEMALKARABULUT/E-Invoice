@@ -18,6 +18,12 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.izibiz</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>com.izibiz</groupId>
             <artifactId>repository</artifactId>
@@ -48,9 +54,27 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-        </plugins>
-
-
-    </build>
-
+                <plugin>
+                    <groupId>org.jvnet.jaxb2.maven2</groupId>
+                    <artifactId>maven-jaxb2-plugin</artifactId>
+                    <version>0.14.0</version>
+                    <executions>
+                        <execution>
+                            <id>generate-java-from-xsd</id>
+                            <goals>
+                                <goal>generate</goal>
+                            </goals>
+                            <configuration>
+                                <schemaDirectory>D:\Java Projects\E-Invoice\service\src\main\resources\maindoc</schemaDirectory>
+                                <schemaIncludes>
+                                    <include>UBL-Invoice-2.1.xsd</include>
+                                </schemaIncludes>
+                                <generateDirectory>target\generated-sources</generateDirectory>
+                                <cleanPackageDirectories>true</cleanPackageDirectories>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
 </project>

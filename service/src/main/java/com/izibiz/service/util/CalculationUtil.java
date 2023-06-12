@@ -5,6 +5,7 @@ import com.izibiz.service.domain.Invoice;
 import com.izibiz.service.domain.InvoiceLine;
 import org.springframework.stereotype.Controller;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Controller
@@ -43,5 +44,10 @@ public class CalculationUtil {
 
     public void setTotalTlCost(double exchangeRate, Invoice invoice) {
         invoice.setTotalTlCost(Math.round(exchangeRate * invoice.getTotalCost() * 100.0) / 100.0);
+    }
+
+    public BigDecimal doubleToBigDecimal(Double number, int step){
+
+       return BigDecimal.valueOf(number).setScale(step,BigDecimal.ROUND_UP);
     }
 }

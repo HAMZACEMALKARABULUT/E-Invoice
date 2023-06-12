@@ -1,8 +1,9 @@
 package com.izibiz.api.filter;
 
-import com.izibiz.api.context.Context;
-import com.izibiz.api.context.RequestContext;
+
 import com.izibiz.api.utils.JwtUtil;
+import com.izibiz.common.context.Context;
+import com.izibiz.common.context.RequestContext;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import org.apache.commons.lang3.StringUtils;
@@ -60,8 +61,8 @@ public class JwtTokenFilter extends GenericFilterBean {
                 filterChain.doFilter(servletRequest, servletResponse);
             }catch (Exception e){
                 SecurityContextHolder.clearContext();
-                //httpServletResponse.setStatus(403);
-                //httpServletResponse.sendError(HttpServletResponse.SC_FORBIDDEN,e.getMessage());
+                httpServletResponse.setStatus(403);
+                httpServletResponse.sendError(HttpServletResponse.SC_FORBIDDEN,e.getMessage());
             }
     }
 

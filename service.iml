@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/service">
+      <sourceFolder url="file://$MODULE_DIR$/service/target/generated-sources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service/target/oasis" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service/target/org" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service/target/ubl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service/target/un" isTestSource="false" />
+    </content>
+  </component>
+</module>

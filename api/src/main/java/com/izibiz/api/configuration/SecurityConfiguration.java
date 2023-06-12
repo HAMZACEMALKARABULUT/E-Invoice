@@ -21,7 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
-@Autowired
+    @Autowired
 private GetPublicKey getPublicKey;
     @Autowired
     private UserDetailsService detailsService;
@@ -40,7 +40,7 @@ private GetPublicKey getPublicKey;
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf().disable().cors().and()
 
-                    .addFilterAfter(new JwtTokenFilter(getPublicKey.getJwtKey()), UsernamePasswordAuthenticationFilter.class)
+                    .addFilterBefore(new JwtTokenFilter(getPublicKey.getJwtKey()), UsernamePasswordAuthenticationFilter.class)
                 .formLogin().disable()
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint())
                 .and()

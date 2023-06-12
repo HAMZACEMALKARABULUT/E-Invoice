@@ -1,0 +1,29 @@
+
+J
+java:S5411"(Use a primitive boolean expression here.(¾ãû£úÿÿÿÿ8”Ã¯ğ„1
+E
+java:S5411"(Use a primitive boolean expression here.(İÄ‰Ä8•Ã¯ğ„1
+J
+java:S5411!"(Use a primitive boolean expression here.(¾ãû£úÿÿÿÿ8–Ã¯ğ„1
+E
+java:S5411""(Use a primitive boolean expression here.(ÅØüû8–Ã¯ğ„1
+J
+java:S5411Q"(Use a primitive boolean expression here.(¾ãû£úÿÿÿÿ8—Ã¯ğ„1
+J
+java:S5411R"(Use a primitive boolean expression here.(Ñ©ƒƒüÿÿÿÿ8—Ã¯ğ„1
+J
+java:S5411U"(Use a primitive boolean expression here.(¾ãû£úÿÿÿÿ8—Ã¯ğ„1
+E
+java:S5411W"(Use a primitive boolean expression here.(Å­Ãæ8—Ã¯ğ„1
+Y
+java:S3655R"7Call "Optional#isPresent()" before accessing the value.(Ñ©ƒƒüÿÿÿÿ8ÆÃ¯ğ„1
+T
+java:S3655W"7Call "Optional#isPresent()" before accessing the value.(Å­Ãæ8ÆÃ¯ğ„1
+d
+java:S1858"G"getIdentifier" returns a string, there's no need to call "toString()".(ò¨®Ö8ËÃ¯ğ„1
+d
+java:S1858 "G"getIdentifier" returns a string, there's no need to call "toString()".(ÚàÄú8ÎÃ¯ğ„1
+d
+java:S1858P"G"getIdentifier" returns a string, there's no need to call "toString()".(ò¨®Ö8ÛÃ¯ğ„1
+d
+java:S1858T"G"getIdentifier" returns a string, there's no need to call "toString()".(ÚàÄú8ÜÃ¯ğ„1

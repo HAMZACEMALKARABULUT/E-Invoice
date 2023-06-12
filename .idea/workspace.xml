@@ -5,75 +5,262 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e41b8e0-7e6f-4e60-8b7b-88c70455c942" name="Changes" comment="In this commit , users have to take a token for access our api but login page doesn't want the token for access.">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/AuthenticationAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/apiModel/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/AuthenticationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/GetPublicKey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/TokenResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/exception/CustomAccessDeniedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/008aa7e7ef384744ef7baa823a783d5dd386cb5b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09cb64994d97d5491d1bbc85be9c8baf42ddfc6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32c8866edecbf5d8d8c83645bf7ce4e9c724898a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/c/3c942b5e333d632c573b8dc17eab700cf738f45d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53f87af657f03dbea188297954ffbed09e489c26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e9114dd888662e6fe449074066891913f32a3e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/67d46921ad8c4feb27128627889cd3ad8e67e729" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dca8a279f6baf3493801fbe130a09a9bb936e3b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8188041d87729f51eea018bb551f4db6cca2097" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5ff6cf39702bf3e382cad13c5b736872415bf1b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f96e9a9f17ac4ddbc7cd81dc0851cdfa0558373b" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/008aa7e7ef384744ef7baa823a783d5dd386cb5b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/0/00fbbec11b8969a454fd4567f37f0fd20b6ec8c5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/3/038edb73696099ef5bf4d61b1e6a6784b9b656d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/4/04cabd6be394c5bfa97173618f221aee131707db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/0574dcdf37c92d1b8bfe91229edb5d6d882ce574" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09cb64994d97d5491d1bbc85be9c8baf42ddfc6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0ac1941205fadce87f0a74d96dfff9b9d224ceac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/12070179942b0ada6bedbfbe05fe05db72d20af1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/6/16368a7e640517ad8313f0722078408d52ed0081" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/a/1a9a3f8bb75bd4e9754b7f777483c26fbc61744c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/c/1c0bc47ca6de487a3657bffdbb4b4c2be1c4039f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/2/22686c0808f209c55a27a9eef3366ca62d4a74e9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/2867ecd5d9f3248da43bc85bba47641161a2bebd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/8/28a7e1b92407dd2d6a416d4f24b8c2a2eb64fc2e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/e/2e5ba809d7dfd49358a0263e23e5bc47040641d5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32c8866edecbf5d8d8c83645bf7ce4e9c724898a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/2/32e4e7792ccca59bb7248ac073c826cb0a62a50e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/7/37d3d2f538e5020300dbc23e847cea976e0180fa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/8/384102248d899e3e4a67301a981a07f6a4c0b43a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/d/3d0ae48dc068867b7fc2358e22053e138fa1e529" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/9/497145584c8b0a11feb474f2e74cdea94b4ea8dd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4ac029f196f9f07efeed3bf5aede62f3c2cb5e39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/0/50c40f1186afc721d90dfbcfd977b2d708c062ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/2/52f9f00d02ca090103e2b6e3f8f46ae530917f54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/5386bff65916e59abaaa0236ed3d6db076a9a95b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/3/53f87af657f03dbea188297954ffbed09e489c26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/550ff06a48ebead37cbbe20ea7f52cc4fc58baa0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/e/5e9114dd888662e6fe449074066891913f32a3e8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/60e6ef7fa9adf7eb6e4dec2bdd65b8a669400101" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/1/610e0d85133d386eeb37c907faa03b089d478def" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/647600cb32f9e90ac55c97f1f635978fc3029739" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/4/64f2b42e5b9283dfd663874666d01be3176aaa22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/6/66ad379a30fe05d0c7f4c1bec323295bf5f9527e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/7/67d46921ad8c4feb27128627889cd3ad8e67e729" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/0/70ad6c84ab48387036db00742613d2928f9f42d4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/7170febb9563bfbd0501978f3b2b1e9619611029" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/1/71ec6acef6acaada379197c2ef8844e6642faac9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/746ca05249c8a77bb377fb5f3023d24f183341ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/8/78ad2b7cb7ec168b4e94f1c507fffcd432ed3d8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/a/7a15156f9845fbed34d2981deb6335e0a7bfde05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/b/7b17a60783db8fe3ad0d05435245710d4c77a5a1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/c/7ce647b24274a5e6c8d847761c699e17d5df7937" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/d/7dca8a279f6baf3493801fbe130a09a9bb936e3b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/e/7e6ea773da1d9368fbcaa683d986c2b0bfc015b0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/1/8137e13185e287b257a49da6f2013aa6ff835b1e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/5/8564095b0fd9ee1f6e52b0c8db1bc92b57320877" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c0522ae310455fb4cbcc8f21b5479bc345d6495" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/97f84a4158b70b29d2fa9b0b7f46ff212f955b3f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/8/98a54dea8066f51639267c292dabae3ffc8881e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/2/a2a3be53d54dba187b009afd5cf8098c83c90baf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a48725d8a36bc75d3013b31d3520bc6969dd461b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a915717859bd67db77d59ecf92efd2db20e2a7f0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/9/a9538d94d1f9cf05d416605420b655dd9b18b628" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/c/ac678049f24ca2505a66f2188ebdf67b437672aa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/e/ae6d130bf9785f2f29a274230990816dbf46ca70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/afe8c2ff785a0c8cb898edfe29b449675ac5fd59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b368b52eadf765dea3f159a8f5bfc657c420703e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/6/b69f0fbc4df1ed8365ce76a4aa5f669b3d24c3a9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b8188041d87729f51eea018bb551f4db6cca2097" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/8/b89a2799f6db0dd25869c3d360fd4a8fce5494a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b93101f301353902cc83d95e550eab619446f9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/b/bbc4f4e461208cf2d33606874a6b46fdc6890a1a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/e/bea785e633d78106f2365172060319c85c0f23bd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/0/c00f42bb86ec0434dbd95944fefa07731e740541" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/8/c88c85d80bef9dc2f7e67291e49eb845d8872bf0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/9/c9449f27395ae610f5f151558fba99894c1874bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/b/cbb43f9b447ed964cd641efeff3b2376a73458c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc642248bec5babeed04a866371686cda2dbaa2d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/c/cc6f2d0b208c5e6f698e144374cb708f5d7ccc6e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/4/d477b1b5f4198b89aa7e5fa52af8c76bc3a07343" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/9/d963ac02e042d7708df0760a77e33f78d8ba3af2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da4179c18be51f83cb67bcc8b4cd01b2d305aa7f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/a/da642799029260049482650dc84bf0fc9e61414e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/4/e4c9f9d3ec7a38205f7df6da647a70b19f9136fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/5/e5ff6cf39702bf3e382cad13c5b736872415bf1b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e804db9feca51c34523e1276059607d35770d620" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/8/e81724047087c9b0f616d42b18a1fdf5b4d5dea4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/ea3b2e8faeecd9f00a584ba1ef30096bb0dd5d0b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/a/eadaef1c8942825523202858e2a2db5c0c992baf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/c/ecefe31878d2080f8db404c13530ebcdd5649c9c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed55b6cd1f7e0f75ea8bd649df978a8648a4cf1a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/d/ed79158450e3372223adb8778bfcb1171968f2ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/e/eedcee3cf6b35cdca05fa642bea8502dc391ddb0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/f/ef2a57729fb9c489c52e5c458436a01288acb787" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f51800c866a5d6cd69642d5e97168a2e48bd0e4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/5/f5d4ca6279c9bc678dddbae6c3e352028e6e95cd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/9/f96e9a9f17ac4ddbc7cd81dc0851cdfa0558373b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/008aa7e7ef384744ef7baa823a783d5dd386cb5b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/00fbbec11b8969a454fd4567f37f0fd20b6ec8c5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/3/038edb73696099ef5bf4d61b1e6a6784b9b656d3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/4/04cabd6be394c5bfa97173618f221aee131707db" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/5/0574dcdf37c92d1b8bfe91229edb5d6d882ce574" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/09cb64994d97d5491d1bbc85be9c8baf42ddfc6f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/a/0ac1941205fadce87f0a74d96dfff9b9d224ceac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/2/12070179942b0ada6bedbfbe05fe05db72d20af1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/6/16368a7e640517ad8313f0722078408d52ed0081" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/a/1a9a3f8bb75bd4e9754b7f777483c26fbc61744c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/1/c/1c0bc47ca6de487a3657bffdbb4b4c2be1c4039f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/2/22686c0808f209c55a27a9eef3366ca62d4a74e9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/8/2867ecd5d9f3248da43bc85bba47641161a2bebd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/8/28a7e1b92407dd2d6a416d4f24b8c2a2eb64fc2e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/e/2e5ba809d7dfd49358a0263e23e5bc47040641d5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/2/32c8866edecbf5d8d8c83645bf7ce4e9c724898a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/2/32e4e7792ccca59bb7248ac073c826cb0a62a50e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/7/37d3d2f538e5020300dbc23e847cea976e0180fa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/8/384102248d899e3e4a67301a981a07f6a4c0b43a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/d/3d0ae48dc068867b7fc2358e22053e138fa1e529" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/9/497145584c8b0a11feb474f2e74cdea94b4ea8dd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/a/4ac029f196f9f07efeed3bf5aede62f3c2cb5e39" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/0/50c40f1186afc721d90dfbcfd977b2d708c062ec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/2/52f9f00d02ca090103e2b6e3f8f46ae530917f54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/5386bff65916e59abaaa0236ed3d6db076a9a95b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/53f87af657f03dbea188297954ffbed09e489c26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/5/550ff06a48ebead37cbbe20ea7f52cc4fc58baa0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/e/5e9114dd888662e6fe449074066891913f32a3e8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/0/60e6ef7fa9adf7eb6e4dec2bdd65b8a669400101" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/1/610e0d85133d386eeb37c907faa03b089d478def" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/4/647600cb32f9e90ac55c97f1f635978fc3029739" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/4/64f2b42e5b9283dfd663874666d01be3176aaa22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/6/66ad379a30fe05d0c7f4c1bec323295bf5f9527e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/7/67d46921ad8c4feb27128627889cd3ad8e67e729" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/0/70ad6c84ab48387036db00742613d2928f9f42d4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/7170febb9563bfbd0501978f3b2b1e9619611029" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/1/71ec6acef6acaada379197c2ef8844e6642faac9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/4/746ca05249c8a77bb377fb5f3023d24f183341ae" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/8/78ad2b7cb7ec168b4e94f1c507fffcd432ed3d8a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/a/7a15156f9845fbed34d2981deb6335e0a7bfde05" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/b/7b17a60783db8fe3ad0d05435245710d4c77a5a1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/c/7ce647b24274a5e6c8d847761c699e17d5df7937" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7dca8a279f6baf3493801fbe130a09a9bb936e3b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/e/7e6ea773da1d9368fbcaa683d986c2b0bfc015b0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/1/8137e13185e287b257a49da6f2013aa6ff835b1e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/5/8564095b0fd9ee1f6e52b0c8db1bc92b57320877" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8c0522ae310455fb4cbcc8f21b5479bc345d6495" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/7/97f84a4158b70b29d2fa9b0b7f46ff212f955b3f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/8/98a54dea8066f51639267c292dabae3ffc8881e2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/f/9fe84ebb15faf917b7def6236dba604453cc61e0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/2/a2a3be53d54dba187b009afd5cf8098c83c90baf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/4/a48725d8a36bc75d3013b31d3520bc6969dd461b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a915717859bd67db77d59ecf92efd2db20e2a7f0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/9/a9538d94d1f9cf05d416605420b655dd9b18b628" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/c/ac678049f24ca2505a66f2188ebdf67b437672aa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/e/ae6d130bf9785f2f29a274230990816dbf46ca70" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/a/f/afe8c2ff785a0c8cb898edfe29b449675ac5fd59" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/3/b368b52eadf765dea3f159a8f5bfc657c420703e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/6/b69f0fbc4df1ed8365ce76a4aa5f669b3d24c3a9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b8188041d87729f51eea018bb551f4db6cca2097" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b89a2799f6db0dd25869c3d360fd4a8fce5494a5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/9/b93101f301353902cc83d95e550eab619446f9d9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/b/bbc4f4e461208cf2d33606874a6b46fdc6890a1a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/e/bea785e633d78106f2365172060319c85c0f23bd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/0/c00f42bb86ec0434dbd95944fefa07731e740541" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/8/c88c85d80bef9dc2f7e67291e49eb845d8872bf0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/9/c9449f27395ae610f5f151558fba99894c1874bc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/b/cbb43f9b447ed964cd641efeff3b2376a73458c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/cc642248bec5babeed04a866371686cda2dbaa2d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/c/c/cc6f2d0b208c5e6f698e144374cb708f5d7ccc6e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/4/d477b1b5f4198b89aa7e5fa52af8c76bc3a07343" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/9/d963ac02e042d7708df0760a77e33f78d8ba3af2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da4179c18be51f83cb67bcc8b4cd01b2d305aa7f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/d/a/da642799029260049482650dc84bf0fc9e61414e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/4/e4c9f9d3ec7a38205f7df6da647a70b19f9136fb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/5/e5ff6cf39702bf3e382cad13c5b736872415bf1b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/8/e804db9feca51c34523e1276059607d35770d620" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/8/e81724047087c9b0f616d42b18a1fdf5b4d5dea4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/a/ea3b2e8faeecd9f00a584ba1ef30096bb0dd5d0b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/a/eadaef1c8942825523202858e2a2db5c0c992baf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/c/ecefe31878d2080f8db404c13530ebcdd5649c9c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/d/ed55b6cd1f7e0f75ea8bd649df978a8648a4cf1a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/d/ed79158450e3372223adb8778bfcb1171968f2ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/e/eedcee3cf6b35cdca05fa642bea8502dc391ddb0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/f/ef2a57729fb9c489c52e5c458436a01288acb787" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/5/f51800c866a5d6cd69642d5e97168a2e48bd0e4a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/5/f5d4ca6279c9bc678dddbae6c3e352028e6e95cd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f96e9a9f17ac4ddbc7cd81dc0851cdfa0558373b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/utils/XmlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/test/java/test/TokenTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/CCTS_CCT_SchemaModule-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-CommonAggregateComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-CommonBasicComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-CommonExtensionComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-CommonSignatureComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-CoreComponentParameters-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-ExtensionContentDataType-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-QualifiedDataTypes-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-SignatureAggregateComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-SignatureBasicComponents-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-UnqualifiedDataTypes-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-XAdESv132-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-XAdESv141-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/common/UBL-xmldsig-core-schema-2.1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/resources/maindoc/UBL-Invoice-2.1.xsd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/143b3de34548b62c0faced5d3e85412dbb6f20dd" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/4/143b3de34548b62c0faced5d3e85412dbb6f20dd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/e/4e8f5b543209ceb415b0f32500b39a0dbdb005a0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/0/008aa7e7ef384744ef7baa823a783d5dd386cb5b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/08f38f18753a6c34798bee25d8f5f6de428b3ee5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/9/09cb64994d97d5491d1bbc85be9c8baf42ddfc6f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/2/32c8866edecbf5d8d8c83645bf7ce4e9c724898a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/3/c/3c942b5e333d632c573b8dc17eab700cf738f45d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/3/53f87af657f03dbea188297954ffbed09e489c26" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/5/e/5e9114dd888662e6fe449074066891913f32a3e8" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/6/7/67d46921ad8c4feb27128627889cd3ad8e67e729" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/7/d/7dca8a279f6baf3493801fbe130a09a9bb936e3b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/8/b8188041d87729f51eea018bb551f4db6cca2097" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/e/5/e5ff6cf39702bf3e382cad13c5b736872415bf1b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/9/f96e9a9f17ac4ddbc7cd81dc0851cdfa0558373b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/4/e/4e8f5b543209ceb415b0f32500b39a0dbdb005a0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/aspect/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/aspect/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/AuthenticationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/AuthenticationAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/InvoiceAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/InvoiceAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/apiModel/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/apiModel/LoginRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/configuration/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/configuration/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/RequestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/RequestContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/izibiz/common/context/Context.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/context/RequestContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/izibiz/common/context/RequestContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/AuthenticationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/InvoiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/InvoiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceLineDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/dto/InvoiceLineDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/filter/JwtTokenFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/filter/JwtTokenFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/izibiz/api/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/api-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/api-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/CustomerDtoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/CustomerDtoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/InvoiceDtoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/InvoiceDtoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/ProductDtoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/ProductDtoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/UserDtoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/generated-sources/annotations/com/izibiz/api/mapper/UserDtoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/entity/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/com/izibiz/repository/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/UserAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/UserAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/CustomerAdapterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/CustomerAdapterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/UserAdapterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/adapter/impl/UserAdapterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/ErrorCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/enums/ErrorCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/mapper/ProductMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/api/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/InvoiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/InvoiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/util/CalculationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/util/CalculationUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/validation/ValidationUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/izibiz/service/validation/ValidationUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/CustomerMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/CustomerMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/InvoiceMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/InvoiceMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/ProductMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/ProductMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/RoleMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/RoleMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/UserMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/generated-sources/annotations/com/izibiz/service/mapper/UserMapperImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="module" />
+    </option>
   </component>
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
@@ -132,57 +319,60 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/Java Projects/mouse hareketi",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4448276",
-    "settings.editor.selected.configurable": "Errors",
-    "spring.configuration.checksum": "6b6115756bcca28ac08fb16c75cd85ed",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Java Projects/mouse hareketi&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4448276&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;644c89cdc61c86816478d8f30a34215e&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "PLAIN_TEXT"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;PLAIN_TEXT&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.izibiz.mapper" />
       <recent name="com.staj.proje.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java Projects\E-Invoice\service\src\main\resources" />
       <recent name="D:\Java Projects\E-Invoice\api\src\main\resources" />
+      <recent name="D:\Java Projects\E-Invoice\.idea" />
       <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz\util" />
       <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java Projects\E-Invoice\service\src\main\resources" />
+      <recent name="D:\Java Projects\E-Invoice\api\src\main\resources" />
       <recent name="D:\Java Projects\E-Invoice\api\src\main\java\com\izibiz" />
       <recent name="D:\Java Projects\E-Invoice\service\src\main\java\com\izibiz" />
       <recent name="D:\Java Projects\E-Invoice\repository\src\main\java\com\izibiz\" />
-      <recent name="D:\Java Projects\E-Invoice\repository\src\main\java\com\izibiz" />
-      <recent name="D:\Java Projects\E-Invoice\api\src\main\java\com\izibiz\" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.izibiz" />
@@ -209,6 +399,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TokenTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.TokenTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.ValidationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.izibiz.api.Main" />
@@ -218,10 +438,14 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.TokenTest" />
+      <item itemvalue="JUnit.ValidationTest" />
       <item itemvalue="Spring Boot.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TokenTest" />
+        <item itemvalue="JUnit.ValidationTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -317,7 +541,23 @@
       <workItem from="1685445734645" duration="17892000" />
       <workItem from="1685484731352" duration="3630000" />
       <workItem from="1685518173597" duration="26070000" />
-      <workItem from="1685607534673" duration="5699000" />
+      <workItem from="1685607534673" duration="8889000" />
+      <workItem from="1685653501422" duration="2773000" />
+      <workItem from="1685667728284" duration="1593000" />
+      <workItem from="1685690391023" duration="1208000" />
+      <workItem from="1685706518903" duration="6291000" />
+      <workItem from="1685742596358" duration="625000" />
+      <workItem from="1685884175258" duration="21409000" />
+      <workItem from="1686004596897" duration="1770000" />
+      <workItem from="1686035874895" duration="10069000" />
+      <workItem from="1686056125558" duration="13994000" />
+      <workItem from="1686077541812" duration="3823000" />
+      <workItem from="1686122381866" duration="24929000" />
+      <workItem from="1686172399183" duration="735000" />
+      <workItem from="1686209608409" duration="9546000" />
+      <workItem from="1686248233886" duration="697000" />
+      <workItem from="1686295989506" duration="3414000" />
+      <workItem from="1686394175198" duration="458000" />
     </task>
     <task id="LOCAL-00001" summary="07.03.2023 &#10;ProductController and menu added">
       <created>1678203488571</created>
@@ -424,7 +664,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684931393718</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="In this commit , users have to take a token for access our api but login page doesn't want the token for access.">
+      <created>1685630123620</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1685630123620</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,25 +754,6 @@
           <properties class="org.hibernate.TransientObjectException" package="org.hibernate" />
           <option name="timeStamp" value="23" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/api/src/main/java/com/izibiz/api/api/CustomerAPI.java</url>
-          <line>16</line>
-          <properties class="com.izibiz.api.api.CustomerAPI" method="getCustomers">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/ProductService.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -537,6 +765,7 @@
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
         <watch expression="this" />
+        <watch expression="  invoiceDataControl(invoice);&#10;        RequestContext user = Context.getCurrentUser();&#10;        Customer customer = customerService.findById(invoice.getCustomerId(), userId).get();&#10;        calculationUtil.calculateLine(invoice.getInvoiceLines());&#10;        calculationUtil.calculateTotalCost(invoice);&#10;        setCreateDate(invoice);&#10;        invoice.setUserId(userId);&#10;        String moneyType = invoice.getMoneyType();&#10;&#10;&#10;        InvoiceType inv = new InvoiceType();&#10;        PartyType supplierParty = new PartyType();&#10;        PartyNameType supplierPartyNameType = new PartyNameType();&#10;        NameType nameType = new NameType();&#10;        nameType.setValue(user.getUsername());&#10;        supplierPartyNameType.setName(nameType);&#10;        supplierParty.setPartyName(supplierPartyNameType);&#10;&#10;        SupplierPartyType supplierPartyType = new SupplierPartyType();&#10;        supplierPartyType.setParty(supplierParty);&#10;&#10;        CustomerPartyType customerPartyType = new CustomerPartyType();&#10;        PartyType customerParty = new PartyType();&#10;        NameType nt1 = new NameType();&#10;        nt1.setValue(customer.getName() + &quot; &quot; + customer.getSurname());&#10;&#10;        PartyNameType customerPartyNameType = new PartyNameType();&#10;        customerPartyNameType.setName(nt1);&#10;        customerParty.setPartyName(customerPartyNameType);&#10;&#10;&#10;        PartyIdentificationType partyIdentificationType = new PartyIdentificationType();&#10;        IDType idType = new IDType();&#10;        idType.setValue(customer.getIdentifier());&#10;        partyIdentificationType.setID(idType);&#10;&#10;        customerParty.getPartyIdentification().add(partyIdentificationType);&#10;&#10;        ContactType contactType = new ContactType();&#10;        TelephoneType telephoneType = new TelephoneType();&#10;        telephoneType.setValue(customer.getTelNo());&#10;        ElectronicMailType electronicMailType = new ElectronicMailType();&#10;        electronicMailType.setValue(customer.getMail());&#10;        contactType.setTelephone(telephoneType);&#10;        contactType.setElectronicMail(electronicMailType);&#10;&#10;&#10;        PartyTaxSchemeType partyTaxSchemeType = new PartyTaxSchemeType();&#10;        TaxSchemeType taxSchemeType = new TaxSchemeType();&#10;        NameType nt2 = new NameType();&#10;&#10;        nt2.setValue(customer.getTaxAdministration());&#10;        taxSchemeType.setName(nt2);&#10;&#10;        partyTaxSchemeType.setTaxScheme(taxSchemeType);&#10;        AddressType addressType = new AddressType();&#10;        CityNameType cityNameType = new CityNameType();&#10;        CountryType countryType = new CountryType();&#10;&#10;        NameType nt3 = new NameType();&#10;        nt3.setValue(&quot;Türkiye&quot;);&#10;        countryType.setName(nt3);&#10;        cityNameType.setValue(&quot;İstanbul&quot;);&#10;        addressType.setCityName(cityNameType);&#10;        addressType.setCountry(countryType);&#10;        CitySubdivisionNameType citySubdivisionNameType = new CitySubdivisionNameType();&#10;&#10;        citySubdivisionNameType.setValue(&quot;Başakşehir&quot;);&#10;        addressType.setCitySubdivisionName(citySubdivisionNameType);&#10;        BuildingNameType buildingNameType = new BuildingNameType();&#10;        buildingNameType.setValue(&quot;14/A&quot;);&#10;        addressType.setBuildingName(buildingNameType);&#10;        customerParty.setPostalAddress(addressType);&#10;        customerParty.setContact(contactType);&#10;        customerParty.setPartyTaxScheme(partyTaxSchemeType);&#10;        customerPartyType.setParty(customerParty);&#10;&#10;&#10;        TaxSubtotalType taxSubtotalType = new TaxSubtotalType();&#10;        TaxAmountType taxAmountType = new TaxAmountType();&#10;        taxAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalTax(), 2));&#10;        taxAmountType.setCurrencyID(moneyType);&#10;        taxSubtotalType.setTaxAmount(taxAmountType);&#10;&#10;&#10;        PercentType percentType = new PercentType();&#10;&#10;&#10;        percentType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalTax() / invoice.getTotalCost() * 100, 2));&#10;&#10;        taxSubtotalType.setPercent(percentType);&#10;        taxSubtotalType.setTaxAmount(taxAmountType);&#10;&#10;&#10;        TaxableAmountType taxableAmountType = new TaxableAmountType();&#10;&#10;        BigDecimal bgTaxableAmount = new BigDecimal(invoice.getTotalTax());&#10;&#10;&#10;        taxableAmountType.setCurrencyID(moneyType);&#10;        taxableAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        taxSubtotalType.setTaxableAmount(taxableAmountType);&#10;&#10;        TaxTotalType taxTotalType = new TaxTotalType();&#10;        taxTotalType.setTaxAmount(taxAmountType);&#10;        taxTotalType.getTaxSubtotal().add(taxSubtotalType);&#10;&#10;        MonetaryTotalType monetaryTotalType = new MonetaryTotalType();&#10;&#10;        PayableAmountType payableAmountType = new PayableAmountType();&#10;&#10;&#10;        payableAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        payableAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setPayableAmount(payableAmountType);&#10;        TaxInclusiveAmountType taxInclusiveAmountType = new TaxInclusiveAmountType();&#10;        taxInclusiveAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost() - invoice.getTotalTax(), 2));&#10;        taxInclusiveAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setTaxInclusiveAmount(taxInclusiveAmountType);&#10;&#10;        TaxExclusiveAmountType taxExclusiveAmountType = new TaxExclusiveAmountType();&#10;        taxExclusiveAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        taxExclusiveAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setTaxExclusiveAmount(taxExclusiveAmountType);&#10;&#10;        inv.setLegalMonetaryTotal(monetaryTotalType);&#10;        inv.getTaxTotal().add(taxTotalType);&#10;        inv.setAccountingSupplierParty(supplierPartyType);&#10;        inv.setAccountingCustomerParty(customerPartyType);&#10;        int invoiceLineNo = 1;&#10;" />
       </configuration>
       <configuration name="Application">
         <watch expression="invoiceLine.piece" />
@@ -550,6 +779,9 @@
         <watch expression="invoice.invoiceLines.get(0).product" />
         <watch expression="invoice.invoiceLines.get(0).product" />
       </configuration>
+      <inline-watch fileUrl="file://$PROJECT_DIR$/service/src/main/java/com/izibiz/service/service/InvoiceService.java" line="67">
+        <watch expression="  invoiceDataControl(invoice);&#10;        RequestContext user = Context.getCurrentUser();&#10;        Customer customer = customerService.findById(invoice.getCustomerId(), userId).get();&#10;        calculationUtil.calculateLine(invoice.getInvoiceLines());&#10;        calculationUtil.calculateTotalCost(invoice);&#10;        setCreateDate(invoice);&#10;        invoice.setUserId(userId);&#10;        String moneyType = invoice.getMoneyType();&#10;&#10;&#10;        InvoiceType inv = new InvoiceType();&#10;        PartyType supplierParty = new PartyType();&#10;        PartyNameType supplierPartyNameType = new PartyNameType();&#10;        NameType nameType = new NameType();&#10;        nameType.setValue(user.getUsername());&#10;        supplierPartyNameType.setName(nameType);&#10;        supplierParty.setPartyName(supplierPartyNameType);&#10;&#10;        SupplierPartyType supplierPartyType = new SupplierPartyType();&#10;        supplierPartyType.setParty(supplierParty);&#10;&#10;        CustomerPartyType customerPartyType = new CustomerPartyType();&#10;        PartyType customerParty = new PartyType();&#10;        NameType nt1 = new NameType();&#10;        nt1.setValue(customer.getName() + &quot; &quot; + customer.getSurname());&#10;&#10;        PartyNameType customerPartyNameType = new PartyNameType();&#10;        customerPartyNameType.setName(nt1);&#10;        customerParty.setPartyName(customerPartyNameType);&#10;&#10;&#10;        PartyIdentificationType partyIdentificationType = new PartyIdentificationType();&#10;        IDType idType = new IDType();&#10;        idType.setValue(customer.getIdentifier());&#10;        partyIdentificationType.setID(idType);&#10;&#10;        customerParty.getPartyIdentification().add(partyIdentificationType);&#10;&#10;        ContactType contactType = new ContactType();&#10;        TelephoneType telephoneType = new TelephoneType();&#10;        telephoneType.setValue(customer.getTelNo());&#10;        ElectronicMailType electronicMailType = new ElectronicMailType();&#10;        electronicMailType.setValue(customer.getMail());&#10;        contactType.setTelephone(telephoneType);&#10;        contactType.setElectronicMail(electronicMailType);&#10;&#10;&#10;        PartyTaxSchemeType partyTaxSchemeType = new PartyTaxSchemeType();&#10;        TaxSchemeType taxSchemeType = new TaxSchemeType();&#10;        NameType nt2 = new NameType();&#10;&#10;        nt2.setValue(customer.getTaxAdministration());&#10;        taxSchemeType.setName(nt2);&#10;&#10;        partyTaxSchemeType.setTaxScheme(taxSchemeType);&#10;        AddressType addressType = new AddressType();&#10;        CityNameType cityNameType = new CityNameType();&#10;        CountryType countryType = new CountryType();&#10;&#10;        NameType nt3 = new NameType();&#10;        nt3.setValue(&quot;Türkiye&quot;);&#10;        countryType.setName(nt3);&#10;        cityNameType.setValue(&quot;İstanbul&quot;);&#10;        addressType.setCityName(cityNameType);&#10;        addressType.setCountry(countryType);&#10;        CitySubdivisionNameType citySubdivisionNameType = new CitySubdivisionNameType();&#10;&#10;        citySubdivisionNameType.setValue(&quot;Başakşehir&quot;);&#10;        addressType.setCitySubdivisionName(citySubdivisionNameType);&#10;        BuildingNameType buildingNameType = new BuildingNameType();&#10;        buildingNameType.setValue(&quot;14/A&quot;);&#10;        addressType.setBuildingName(buildingNameType);&#10;        customerParty.setPostalAddress(addressType);&#10;        customerParty.setContact(contactType);&#10;        customerParty.setPartyTaxScheme(partyTaxSchemeType);&#10;        customerPartyType.setParty(customerParty);&#10;&#10;&#10;        TaxSubtotalType taxSubtotalType = new TaxSubtotalType();&#10;        TaxAmountType taxAmountType = new TaxAmountType();&#10;        taxAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalTax(), 2));&#10;        taxAmountType.setCurrencyID(moneyType);&#10;        taxSubtotalType.setTaxAmount(taxAmountType);&#10;&#10;&#10;        PercentType percentType = new PercentType();&#10;&#10;&#10;        percentType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalTax() / invoice.getTotalCost() * 100, 2));&#10;&#10;        taxSubtotalType.setPercent(percentType);&#10;        taxSubtotalType.setTaxAmount(taxAmountType);&#10;&#10;&#10;        TaxableAmountType taxableAmountType = new TaxableAmountType();&#10;&#10;        BigDecimal bgTaxableAmount = new BigDecimal(invoice.getTotalTax());&#10;&#10;&#10;        taxableAmountType.setCurrencyID(moneyType);&#10;        taxableAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        taxSubtotalType.setTaxableAmount(taxableAmountType);&#10;&#10;        TaxTotalType taxTotalType = new TaxTotalType();&#10;        taxTotalType.setTaxAmount(taxAmountType);&#10;        taxTotalType.getTaxSubtotal().add(taxSubtotalType);&#10;&#10;        MonetaryTotalType monetaryTotalType = new MonetaryTotalType();&#10;&#10;        PayableAmountType payableAmountType = new PayableAmountType();&#10;&#10;&#10;        payableAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        payableAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setPayableAmount(payableAmountType);&#10;        TaxInclusiveAmountType taxInclusiveAmountType = new TaxInclusiveAmountType();&#10;        taxInclusiveAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost() - invoice.getTotalTax(), 2));&#10;        taxInclusiveAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setTaxInclusiveAmount(taxInclusiveAmountType);&#10;&#10;        TaxExclusiveAmountType taxExclusiveAmountType = new TaxExclusiveAmountType();&#10;        taxExclusiveAmountType.setValue(calculationUtil.doubleToBigDecimal(invoice.getTotalCost(), 2));&#10;        taxExclusiveAmountType.setCurrencyID(moneyType);&#10;        monetaryTotalType.setTaxExclusiveAmount(taxExclusiveAmountType);&#10;&#10;        inv.setLegalMonetaryTotal(monetaryTotalType);&#10;        inv.getTaxTotal().add(taxTotalType);&#10;        inv.setAccountingSupplierParty(supplierPartyType);&#10;        inv.setAccountingCustomerParty(customerPartyType);&#10;        int invoiceLineNo = 1;&#10;" />
+      </inline-watch>
     </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

@@ -23,12 +23,21 @@ public class ValidationUtil {
 
     static public String  moneyTypeRegex="^(?:TL|tl|₺|\\$|USD|usd|€|EUR|eur)$";
 
+    static public String uuidRegex="^[0-9a-fA-F]{8}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{4}\\b-[0-9a-fA-F]{12}$";
+
 
     public static boolean isValidText(String inputText, String regex) {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(inputText.trim());
         return matcher.matches();
     }
+
+    public static boolean isUuid(String uuid){
+
+
+        return isValidText(uuid,uuidRegex);
+    }
+
 
     public static boolean isMoneyType(String moneyType){
 

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="repository" />
+        <module name="common" />
       </profile>
       <profile name="Annotation profile for edonusum-staj" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -23,16 +24,21 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="com.izibiz.api.context" target="1.8" />
       <module name="E-Invoice" target="1.8" />
+      <module name="src" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="E-Invoice" options="-parameters" />
       <module name="api" options="-parameters" />
+      <module name="com.izibiz.api.context" options="-parameters" />
+      <module name="common" options="-parameters" />
       <module name="edonusum-staj" options="" />
       <module name="repository" options="-parameters" />
       <module name="service" options="-parameters" />
+      <module name="src" options="-parameters" />
     </option>
   </component>
 </project>

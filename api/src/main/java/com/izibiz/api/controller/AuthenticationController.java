@@ -13,11 +13,11 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
 
 import java.util.*;
 
-@RestController
+@Controller
 public class AuthenticationController implements AuthenticationAPI {
 
     @Value("${spring.security.oauth2.resourceserver.jwt.public-key}")
@@ -27,15 +27,12 @@ public class AuthenticationController implements AuthenticationAPI {
 
 
     public Optional<User> loginControl(String userName, String password) {
-
         Optional<User> user = userService.findUserBymail(userName);
         if (user.isPresent() && userService.userAuthentication(user.get(), password)) {
-
             return user;
         } else {
             throw (new CustomException(("Giriş başarısız"), ErrorCode.RECORD_NOT_FOUND));
         }
-
     }
 
     @Override
@@ -61,7 +58,6 @@ public class AuthenticationController implements AuthenticationAPI {
         for (Role role : user.getRole()
         ) {
             roleList.add(role.getRoleName());
-
         }
         tokenResponse.setRoles(roleList);
 
@@ -72,7 +68,6 @@ public class AuthenticationController implements AuthenticationAPI {
 
                 .setSubject(user.getMail())
                 .claim("Mail", user.getMail())
-
                 .claim("Id", user.getId())
                 .claim("Name", user.getName())
                 .claim("Surname", user.getSurname())
@@ -80,9 +75,7 @@ public class AuthenticationController implements AuthenticationAPI {
                 .setExpiration(calendar.getTime())
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(new Date())
-                .signWith(SignatureAlgorithm.HS256,jwtKey
-
-                        )
+                .signWith(SignatureAlgorithm.HS256,jwtKey)
                 .compact();
 
 

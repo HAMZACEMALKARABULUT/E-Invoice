@@ -5,20 +5,17 @@ import com.izibiz.service.exception.CustomException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
-import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 
-@Component
+
 public class JwtUtil {
 
 
     public Jws<Claims> decodeToken(String token, String secretKey) {
-        Jws<Claims> claimsJws ;
-
-
+        Jws<Claims> claimsJws;
         try {
             claimsJws = Jwts.parserBuilder().setSigningKey(secretKey).build().parseClaimsJws(token);
             LocalDateTime currentDateTime = LocalDateTime.now();

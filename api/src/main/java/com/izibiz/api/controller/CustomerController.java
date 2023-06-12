@@ -2,10 +2,10 @@ package com.izibiz.api.controller;
 
 
 import com.izibiz.api.api.CustomerAPI;
-import com.izibiz.api.context.Context;
 import com.izibiz.api.dto.CustomerDto;
 import com.izibiz.api.dto.Response;
 import com.izibiz.api.mapper.CustomerDtoMapper;
+import com.izibiz.common.context.Context;
 import com.izibiz.service.domain.Customer;
 import com.izibiz.service.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
